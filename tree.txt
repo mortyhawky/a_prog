@@ -1,7 +1,13 @@
 .
 ├── bash
-│   └── test
+│   ├── asdf.sh
+│   └── qwer
 ├── c
+│   ├── codevault
+│   │   ├── mem-mov-cpy
+│   │   │   └── mem-move-cpy.c
+│   │   └── threads
+│   │       └── threads01.c
 │   ├── c-primer
 │   │   ├── 01GettingReady
 │   │   │   ├── 01.01example
@@ -33,11 +39,11 @@
 │   ├── ideas.txt
 │   └── kcal.c
 ├── python
-│   └── test_py
+│   └── asdf
 ├── README.md
 ├── test
 ├── test1
 ├── test2
 └── tree.txt
 
-11 directories, 30 files
+14 directories, 33 files
