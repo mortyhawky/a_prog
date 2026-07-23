@@ -1,0 +1,37 @@
+ncurses
+C
+Python
+
+
+or array of structures:
+foodstruct { int timestamp=epoc, str name="knekkebrød", int kcal=542 }
+
+Possible to incrementaly search by food.name, and
+that will give us the kcal/100g value.
+And we can add an arbitraray number off food items per day.
+Timestamp each registration.
+
+One file pr day, one folder structure:
+
+2026..2071dirs
+    01..12dirs
+        01-31files
+
+
+Menu driven hjkl, enter, escape
+ncurses
+
+Start Program and it opens todays file
+e.g. 2026 -> 06 -> 22  2026_06_22.txt
+
+    Timestamp       Food            Kcal/100g
+    260622_0800     Knekkebrød      542
+
+365 files pr year * 50years = 1500files
+
+Simply start with an associative array:
+    Food="Knekkebrød", Kcal=542 
+That can simply be added to and search in:
+To get the Kcal/100g value for a allready
+logged food item.
+

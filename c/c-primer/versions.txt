@@ -1,0 +1,11 @@
+C Primer Plus, Fifth Edition
+By Stephen Prata
+A lean revision of a computer industry classic that has sold over 500,000 copies in previous editions.
+Fifth Edition contains over 20 new programming exercises and newly improved examples.
+C and C++ account for 30% of developers, about three million, and is a $22 million book market per year.
+Updates the third edition by integrating new ANSI/ISO standard, C99.
+Classic that teaches the fundamentals of programming.
+Publisher : Sams
+Pub Date : November 23, 2004
+ISBN : 0-672-32696-5
+Pages :792

@@ -1,0 +1,43 @@
+.
+├── bash
+│   └── test
+├── c
+│   ├── c-primer
+│   │   ├── 01GettingReady
+│   │   │   ├── 01.01example
+│   │   │   ├── 01.01example.c
+│   │   │   ├── 01.02concrete
+│   │   │   ├── 01.02concrete.c
+│   │   │   └── bookmark
+│   │   ├── 02IntroducingC
+│   │   ├── bookmark.md
+│   │   ├── c-primer-5th.pdf
+│   │   ├── c-primer-annotation01.pdf
+│   │   ├── c-primer.pdf
+│   │   └── versions.txt
+│   ├── effective-c
+│   │   └── effective-c.pdf
+│   └── portfolio
+│       ├── 01hello.c
+│       ├── pointers
+│       │   ├── 01intro
+│       │   ├── 01intro.c
+│       │   ├── 02prog2
+│       │   ├── 02prog2.c
+│       │   ├── 03swap
+│       │   └── 03swap.c
+│       ├── struct01.c
+│       ├── struct02.c
+│       └── struct03.c
+├── kcal
+│   ├── ideas.txt
+│   └── kcal.c
+├── python
+│   └── test_py
+├── README.md
+├── test
+├── test1
+├── test2
+└── tree.txt
+
+11 directories, 30 files
