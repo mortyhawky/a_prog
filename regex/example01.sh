@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
+clear
 printf 'Hello I`m %s \n' "Morty"
-printf 'regualar expressions'
+printf 'Practicing regualar expressions\n\n'
 
 rex_pcre='[\w.]+@[a-zA-ZøØ-]+\.[a-zA-Z.]+'
 
