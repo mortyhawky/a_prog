@@ -5,35 +5,49 @@
 # pt47  Chapter 11  Section 02
 # Regular Expressions
 # Bash has it's own regex engine
+# Tip: https://regex101.com/
 
-#re='^(dave|joe)$'
-re='^(d|j).*$'
-input='dave'
+#clear
+#re='^(Morty|Hawky).*$'
+#re='^(joe|man).*$'
+input='Morty is learning Bash'
+re='(Morty) is (learning)'
+# BASH_REMATCH[0]  -> Morty is learning
+# BASH_REMATCH[1]  -> Morty
+# BASH_REMATCH[2]  -> learning
 
 if [[ $input =~ $re ]]; then
-    echo match
-
     printf '%s\n' "${BASH_REMATCH[@]}"
-    full_string=${BASH_REMATCH[0]}
-    name=${BASH_REMATCH[1]}
-    echo '-------------------'
-    printf 'full_string = %s\n' "$full_string"
-    printf 'name        = %s\n' "$full_string"
-
+    #printf "string: BASH_REMATCH[0]:  %s\n" "${BASH_REMATCH[0]}"
+    #printf "match : BASH_REMATCH[1]:  %s\n" "${BASH_REMATCH[1]}"
+    #full_string=${BASH_REMATCH[0]}
+    #match=${BASH_REMATCH[1]}
+    #printf 'full_string  = %s\n' "$full_string"
+    #printf 'matched part = %s\n' "$match"
 else
-    echo no match
+    printf 'no match\n'
 fi
 
-# 
-echo '==================='
-regex='^.*\/(.*) - ([0-9]{4}-[0-9]{2}-[0-9]{2})\..*$'
-for f in ./images/*; do
+printf '\n=======================\n'
+#regex='^.*\/(.*) - ([[:digit:]]{4}[-.][[:digit:]]{2}[-.][[:digit:]]{2})\.'
+# Parentheses () create capture groups stored in BASH_REMATCH[@]
+# Anything inside () becomes a capture group:
+# BASH_REMATCH[0] = whole match
+# BASH_REMATCH[1+] = captured groups
+regex='([[:digit:]]{4}[-.][[:digit:]]{2}[-.][[:digit:]]{2})'
+cnt=1
+shopt -s globstar nullglob
+for f in ./**/*.{jpg,jpeg}; do
     if ! [[ $f =~ $regex ]]; then
-        echo "$f didn't match pattern"
+        printf 'No match for: %s\n' "$f"
         continue
     fi
 
-    name=${BASH_REMATCH[1]}
-    date=${BASH_REMATCH[2]}
-    echo "$date: $name"
+    printf '%s Matched the pattern\n' "$f"
+    i_name=${BASH_REMATCH[1]}
+    i_date=${BASH_REMATCH[2]}
+    printf 'Match No.: %d i_date="%s" i_name="%s"\n\n' \
+        "$cnt" "$i_date" "$i_name"
+    #printf 'Match No.: $cnt i_date=\"$i_date\"  i_name=\"$i_name\"\n\n'
+    ((cnt++))
 done

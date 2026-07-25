@@ -1,0 +1,15 @@
+e:      hello@looseleaftea.com
+p:      +1 555-012-3456
+mobil:  +47 92062339
+cell:   047 92 06 23 39
+home:   +47 920 62 339
+mail:   morty.hawky@outlook.com
+e-post: mort1skoda@gmail.com
+w:      WHOLESALE@LOOSELEAFTEA.COM
+head:   summer@looseleaftea.com
+sub:    tea_club_2026@looseleaftea.com
+uk:     shop@loose-leaf.co.uk
+Social: @LooseLeafTeas
+Web:    www.looseleaftea.com
+Norway  www.løse-teblader.no
+E-post: info@løse-te-blader.no
