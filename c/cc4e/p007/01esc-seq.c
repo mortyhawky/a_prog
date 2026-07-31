@@ -2,7 +2,7 @@
 Compile & Link:
 gcc -std=c23 -Wall -Wextra -Wpedantic \
     -fsanitize=address,undefined \
-    -g esc-seq.c
+    -g 01esc-seq.c
 
 Execute:
 ./a.out
@@ -27,3 +27,26 @@ int main(void) {
 
     return EXIT_SUCCESS; 
 }                               
+
+/*
+C source
+   |
+   |  \u03A9 / \U0001F600
+   v
+Compiler (GCC)
+   |
+   v
+Program output (UTF-8 bytes)
+   |
+   v
+Alacritty
+   |
+   v
+Font fallback:
+   JetBrainsMono Nerd Font Mono
+        +
+   Noto Color Emoji
+   |
+   v
+Ω 😀
+*/
