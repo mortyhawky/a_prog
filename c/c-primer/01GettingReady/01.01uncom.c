@@ -2,6 +2,8 @@
 int main(void)
 {
     int dogs;
+    dogs=0xFFFF;
+
 
     printf("Ok! How many dogs do you have?\n");
     scanf("%d", &dogs);

@@ -1,0 +1,77 @@
+Btw, oh I use Arch Linux
+I have 2 dogs btw
+My neigbour has one cat and one dog
+One lady down the street has two gray cats
+That makes 4 animals in Deichmgt 99-103
+Deichmansgate 103B
+
+abcdefghijklmnopqrstuvwxyzæøå
+ABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ
+1234567890
+
+Ha HaHa
+cat
+mat
+pat
+bat
+Bat
+
+MetaCharacters (Need to be escaped):
+.[{()\^$|?*+
+
+. [ { ( ) \ ^ $ | ? * +
+@ # % & / = `
+
+https://www.youtube.com/watch?v=sa-TUpSx1JA
+coreyms.com
+
+321-555-4321
+321--555-4321
+123.555.1234
+123...555.1234
+345*567*8901
+800-555-4321
+900-555-4321
+
+Fr    Åleseginnpåmeg
+Fr    Åleseginnpåmeg
+Fr.   Ålnes
+Fr.   Ålnes
+Fr. Ås-Larsen
+Fru   Ælgenes
+Fru   Ælgenes
+Fru.  Æsop
+Fru.  Æsop
+Herr  Ødenerd
+Herr  Ødenerd
+Herr. Ødenerd
+Herr. Ødenerd
+Hr    Ødegård
+Hr    Ødegård
+Hr.   Ødegård
+Hr.   Ødegård
+Madam Mimm
+Madam.Mimm
+Mr    Smith
+Mr    Smith
+Mr    T
+Mr    T
+Mr.   Schafer
+Mr.   Schafer
+Mr.   Schafer
+Mr.   Schafer
+Mr.   T
+Mr.   T
+Mr. O'Connor
+Mr. Smith-Jones
+Mrs   Robinson
+Mrs   Robinson
+Mrs.  Robinson
+Mrs.  Robinson
+Ms    Davis
+Ms    Davis
+Ms.   Davis
+Ms.   Davis
+
+#adam|Mrs|Mr|Ms)\.?\s{1,4}([A-ZÆØÅ]\'?[a-zæøå]*\-?[A-ZÆØÅ][a-zæøå]*)
+
