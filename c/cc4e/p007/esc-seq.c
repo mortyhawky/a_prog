@@ -11,8 +11,19 @@ Execute:
 #include <stdlib.h>
 
 int main(void) {  
-    // \t = tab     \n = newline
-    printf("Hello, \tworld!\n"); 
+    // \t horizontal tab
+    // \n newline
+    // \b backspace
+
+    printf("\\Hello, \t\t\"world!\b*\"\n");
+    // prints: \Hello,     "world*"
+
+    printf("Octal 101 ASCII                :  \101\n");
+    printf("Hex  x041 ASCII                :  \x041\n");
+    printf("Dec    65 ASCII                : 65\n\n");
+
+    printf("Unicode \\u03A9 Omega           : \u03A9\n");
+    printf("Unicode \\U0001F600 Smiley      : \U0001F600\n");
 
     return EXIT_SUCCESS; 
 }                               
