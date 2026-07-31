@@ -7,11 +7,11 @@ gcc -std=c23 -Wall -Wextra -Wpedantic \
 Execute:
 ./a.out
 */
-#include <stdio.h>      // for printf function
-#include <stdlib.h>     // for EXIT_SUCCESS
+#include <stdio.h>      // declares printf
+#include <stdlib.h>     // defines EXIT_SUCCESS
 
 int main(void) {
-    printf("Hello, world!\n");
+    printf("Hello, world!\n");  // writes formatted output to stdout
 
-    return EXIT_SUCCESS;
-}
+    return EXIT_SUCCESS;        // return success status code to the OS
+}                               
