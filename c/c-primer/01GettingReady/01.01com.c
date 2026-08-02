@@ -1,10 +1,18 @@
 /*  page 15     2026-07-07
  *  /a/prog/c/c-primer/01GettingReady/01.01example.c
  *  pm -S gcc gdb --needed
-gcc -g 01.01example.c -o 01.01example
-./01.01example
-gdb ./01.01example
-* break main
+ *
+ * Compile:
+gcc -std=c23 -Wall -Wextra -Wpedantic \
+    -fsanitize=address,undefined \
+    -g 03-hello-c23.c
+ *
+ * Run:
+./a.out
+
+* Debug:
+gdb ./a.out
+* b(reak) main
 * r(un)
 * n(ext)
 * print dogs
@@ -18,7 +26,7 @@ int main(void)
     // integer to store number of dogs (stack).
     int dogs;
 
-    // printf=Print Formated
+    // Print Formated
     printf("Ok! How many dogs do you have?\n");
     // scan formated, read an int as decimal from stdin,
     // into memory at the address of dogs.
