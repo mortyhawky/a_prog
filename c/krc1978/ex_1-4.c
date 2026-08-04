@@ -1,11 +1,18 @@
 /*
+The C Programming Language 1978 by Kernighan & Ritchie
+
 Exercise 1-4. Write a program to print the corresponding
 Celsius to Fahrenheit table.
+
+Rewritten for C23
+Added degree symbol and made a function for the 
+convert function.
 
 The formula for converting Fahrenheit to Celsius is:
 Celsius = (5.0 / 9.0) * (Fahrenheit - 32)
 The formula for converting Celsius to Fahrenheit is:
-Fahrenheit = (Celsius + 32) * (9.0 / 5.0)
+Fahrenheit = Celsius * 9.0 / 5.0 + 32
+Fahrenheit = Celsius * 1.8 + 32
 
 Compile: C23:
 gcc -std=c23 -Wall -Wextra -Wpedantic \
@@ -17,10 +24,12 @@ gcc -std=c23 -Wall -Wextra -Wpedantic \
 
 #define DEGREE_SIGN "\u00B0"
 
+int cels_to_fahr(int cels); // Declaration of convert function
+
 int main(void) {
-    float celsius = 0.0f;   // Starting Celsius temp.
-    int   upper   = 100;    // Ending   Celsius temp.
-    int   step    =  10;    // Increments.
+    double celsius = 15.0f;    // Starting Celsius temp.
+    double upper   = 30.0f;    // Ending   Celsius temp.
+    double step    =  0.5f;    // Increments.
     
     // Print table header.
     printf("%10s (%sC) %10s (%sF)\n",
@@ -28,10 +37,15 @@ int main(void) {
            "Fahrenheit", DEGREE_SIGN);
 
     while (celsius <= upper) {
-        float fahrenheit = (celsius + 32) * (9.0 / 5.0);
-        printf("%10.0f %15.1f\n", celsius, fahrenheit);
+        double fahrenheit = cels_to_fahr(celsius);
+        printf("%10.1f %15.1f\n", celsius, fahrenheit);
         celsius += step;
     }
 
     return EXIT_SUCCESS;
+}
+
+// Function to convert Celsius to Fahrenheit
+double cels_to_fahr(double cels) {
+    return cels * 9.0f / 5.0f + 32.0f;
 }
