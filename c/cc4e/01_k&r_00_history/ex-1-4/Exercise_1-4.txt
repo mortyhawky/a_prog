@@ -1,4 +1,0 @@
-Exercise 1-4.
-Write a pogram to print the correspondig 
-Celsius to Fahrenheit table.
-
