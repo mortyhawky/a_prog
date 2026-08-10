@@ -24,12 +24,14 @@ gcc -std=c23 -Wall -Wextra -Wpedantic \
 
 #define DEGREE_SIGN "\u00B0"
 
-int cels_to_fahr(int cels); // Declaration of convert function
+// Celsius-to-Fahrenheit conversion function declaration.
+// Aka. prototype.
+double cels_to_fahr(double cels);
 
 int main(void) {
-    double celsius = 15.0f;    // Starting Celsius temp.
-    double upper   = 30.0f;    // Ending   Celsius temp.
-    double step    =  0.5f;    // Increments.
+    double celsius = 17.0;    // Starting Celsius temp.
+    double upper   = 23.5;    // Ending   Celsius temp.
+    double step    =  0.5;    // Increments.
     
     // Print table header.
     printf("%10s (%sC) %10s (%sF)\n",
@@ -46,6 +48,7 @@ int main(void) {
 }
 
 // Function to convert Celsius to Fahrenheit
+// Aka. definition
 double cels_to_fahr(double cels) {
-    return cels * 9.0f / 5.0f + 32.0f;
+    return cels * (9.0 / 5.0) + 32.0;
 }
