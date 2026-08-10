@@ -19,8 +19,8 @@ gcc -std=c23 -Wall -Wextra -Wpedantic \
     -fsanitize=address,undefined \
     -g ex_1-4.c
 */
-#include <stdio.h>
-#include <stdlib.h>
+#include <stdio.h>  // printf
+#include <stdlib.h> // EXIT_SUCCESS
 
 #define DEGREE_SIGN "\u00B0"
 
