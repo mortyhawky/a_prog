@@ -10,7 +10,7 @@ Execute:
 #include <stdio.h>      // declares printf
 #include <stdlib.h>     // defines EXIT_SUCCESS
 
-int main(void) {   // entry point of our program
+int main(void) {         // entry point of our program
     printf("Hello, world!\n");  // write formatted output to stdout
 
     return EXIT_SUCCESS;        // return success status code to the OS
