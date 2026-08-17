@@ -1,5 +1,5 @@
 /* The C Programming Language
- * Second Edition
+ * Second Edition 1988
  * ANSI C
  * Chapter 01, A TUTORIAL INTRODUCTION, Page 006
  * Hello, world program

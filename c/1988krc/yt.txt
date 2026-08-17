@@ -1,5 +1,6 @@
-Let's play K&R | Chapter 1 Ep. 1 :
+Let's play K&R | Chapter 1 Ep. 1 : PAGE 12
 https://www.youtube.com/watch?v=CK-aiObmaWM&t=2211s
+
 
 29,677 views  Dec 11, 2020
 Reading "The C Programming Language".
