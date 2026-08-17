@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1786984459 source:/a/prog/c/2016giraffAcademy/Giraffe/main.c
+	<stdio.h>
+	<stdlib.h>
+
