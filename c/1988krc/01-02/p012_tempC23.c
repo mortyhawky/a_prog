@@ -8,10 +8,10 @@ gcc -std=c23 -Wall -Wextra -Werror -Wpedantic \
     p012_tempC23.c -o a.out && ./a.out && echo $?
  */
 
+#include <inttypes.h>   // for the PRId16 macro
+#include <stdint.h>     // for fixed-width integers
 #include <stdio.h>      // declares the printf function
 #include <stdlib.h>     // for EXIT_SUCCESS
-#include <stdint.h>     // for fixed-width integers
-#include <inttypes.h>   // for the PRId16 macro
 
 /* Print Fahrenheit-Celsius table
  * Starting at START, ending at END, step STEP
