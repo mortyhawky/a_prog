@@ -10,7 +10,8 @@ gcc -std=c23 -Wall -Wextra -Werror -Wpedantic \
 #include <stdlib.h>
 
 int main(void) {
-    printf("Hello world!\n");
+    printf("main_template.c\n");
+    printf("Using C23\n");
 
     return EXIT_SUCCESS;
 }
