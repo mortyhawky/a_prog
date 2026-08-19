@@ -1,9 +1,9 @@
 /*
-* /a/prog/c/2016giraffAcademy/Giraffe/main.c
+* /a/prog/c/main_template.c
 
 gcc -std=c23 -Wall -Wextra -Werror -Wpedantic \
     -fsanitize=address,undefined -g3 \
-    main.c -o a.out && ./a.out && echo "echo \$? = "$?
+    main_template.c -o a.out && ./a.out && echo "echo \$? = "$?
 */
 
 #include <stdio.h>
