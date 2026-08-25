@@ -12,7 +12,7 @@
 
 gcc -std=c23 -Werror -Wall -Wextra -Wpedantic \
     -fsanitize=address,undefined \
-    -g c_011_01.c && ./a.out
+    -g 011-c23.c && ./a.out
 */
 
 
