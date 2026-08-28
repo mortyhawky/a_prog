@@ -1,20 +1,24 @@
-#include <stdint.h>
-#include <stdio.h>
-#include <stdlib.h>
 /*
  * KRC 1978 page 011
  * Converted to c23
  * Fahrenheit-Celsius table
  * Using the for statment
 
- * The unindentet gcc command is intentional
- * To use copy-mode (Alt+c/v,  y,  Alt+p) in tmux.
+ * The unindentet compile commands is intentional
+ * for using tmux copy-mode (Alt+c/v,  y,  Alt+p).
 
 gcc -std=c23 -Werror -Wall -Wextra -Wpedantic \
     -fsanitize=address,undefined \
     -g 011-c23.c && ./a.out
+
+clang -std=c23 -Werror -Wall -Wextra -Wpedantic \
+    -fsanitize=address,undefined \
+    -g 011-c23.c && ./a.out
 */
 
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 #define DEGREE_SIGN "\u00B0"
 
