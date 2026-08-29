@@ -1,5 +1,5 @@
 /*
-c /a/prog/c/1978kr-cc4e/01/
+c /a/prog/c/1978kr-cc4e/
 
 
 gcc -std=c23 -Wall -Wextra -Werror -Wpedantic \
