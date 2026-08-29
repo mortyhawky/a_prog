@@ -1,5 +1,6 @@
 /*
-c /a/prog/c/1978kr-cc4e/01/main_template.c
+c /a/prog/c/1978kr-cc4e/01/
+
 
 gcc -std=c23 -Wall -Wextra -Werror -Wpedantic \
     -fsanitize=address,undefined -g3 \
