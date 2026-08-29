@@ -14,13 +14,13 @@ The formula for converting Celsius to Fahrenheit is:
 Fahrenheit = Celsius * 9.0 / 5.0 + 32
 
 Compile: C23:
-gcc -std=c23 -Wall -Wextra -Werror -Wpedantic \
-    -fsanitize=address,undefined -g3 \
-    ex_1.5.c -o a.out && ./a.out ; echo "echo \$? = "$?
+gcc   -std=c23 -Wall -Wextra -Werror -Wpedantic \
+      -fsanitize=address,undefined -g3 \
+      ex_1-5.c -o a.out && ./a.out; echo "Exit code = $?" 
     
 clang -std=c23 -Wall -Wextra -Werror -Wpedantic \
       -fsanitize=address,undefined -g3 \
-      ex_1.5.c -o a.out && ./a.out ; echo "echo \$? = "$?
+      ex_1-5.c -o a.out && ./a.out; echo "Exit code = $?"
 */
 
 #include <stdio.h>  // printf
@@ -28,32 +28,33 @@ clang -std=c23 -Wall -Wextra -Werror -Wpedantic \
 
 #define DEGREE_SIGN "\u00B0"
 
-// Celsius-to-Fahrenheit conversion function declaration.
-// Aka. prototype.
+// Fahrenheit-to-Celsius conversion function declaration.
+// Aka. function prototype.
 double fahr_to_cels(double fahr);
 
 int main(void) {
-    double fahr  = 300.0f;    // Starting Fahrenheit temp.
-    double lower =   0.0f;    // Ending   Fahrenheit temp.
-    double step  =  20.0f;    // Increments.
+    double fahr  = 300.0;    // Starting Fahrenheit temp.
+    double lower =   0.0;    // Ending   Fahrenheit temp.
+    double step  =  20.0;    // Increments.
     
     // Print table header.
-    printf("%10s (%sC) %10s (%sF)\n",
+    printf("%11s (%sC) %11s (%sF)\n",
            "Fahrenheit", DEGREE_SIGN,
-           "Celsius",    DEGREE_SIGN);
+           "Celsius",    DEGREE_SIGN
+    );
 
-    while ( fahr > lower ) {
-        double fahr = fahr_to_cels(fahr);
-        printf( "%10.1f %15.1f\n", fahr, celsius );
+    while ( fahr >= lower ) {
+        double celsius = fahr_to_cels(fahr);
+        printf("%11.1f %16.1f\n", 
+                fahr,  celsius
+        );
         fahr -= step;
     }
 
     return EXIT_SUCCESS;
 }
 
-// Function to convert Fahrenheit to Celsius
-// Aka. function definition
+// Fahrenheit-to-Celsius conversion function definition.
 double fahr_to_cels(double f) {
-    printf("In fahr_to_cels f=%f\n", f);
-    return (5.0 / 9.0) * (f - 32)
+    return (5.0 / 9.0) * (f - 32);
 }
