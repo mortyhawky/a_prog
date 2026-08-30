@@ -1,34 +1,28 @@
 /*
- * The C Programming Language 
- * SECOND EDITION
- * ANSI C
- * Brian W. Kernighan
- * Dennis M. Ritchie
- * Converted to C23 by Morty 2026-08-30
-
 c /a/prog/c/1988krc/ch01tut_intro/01gettingStarted
 
-gcc     hello2023.c -o a.out            \
+gcc     hello23.c -o a.out            \
         -std=c23                            \
         -Wall -Wextra -Werror -Wpedantic    \
         -fsanitize=address,undefined        \
         -g3 -O0                             \
         && ./a.out; printf "\n*-> Exit code = $? <-*\n\n"
 
-clang   hello2023.c -o a.out            \
+clang   hello23.c -o a.out            \
         -std=c23                            \
         -Wall -Wextra -Werror -Wpedantic    \
         -fsanitize=address,undefined        \
         -g3 -O0                             \
         && ./a.out; printf "\n*-> Exit code = $? <-*\n\n"
+  */
+
+
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
-int main(void) {
-    
+int main()
+{
     printf("hello, world\n");
-
-    return EXIT_SUCCESS;
+    return 0;
 }
