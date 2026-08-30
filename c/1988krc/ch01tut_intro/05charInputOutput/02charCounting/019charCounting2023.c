@@ -2,14 +2,14 @@
 
 c /a/prog/c/1988krc/ch01tut_intro/05charInputOutput/02charCounting/
 
-gcc     ex1-7.c -o a.out            \
+gcc     019charCounting2023.c -o a.out            \
         -std=c23                            \
         -Wall -Wextra -Werror -Wpedantic    \
         -fsanitize=address,undefined        \
         -g3 -O0                             \
         && ./a.out; printf "\n*-> Exit code = $? <-*\n\n"
 
-clang   ex1-7.c -o a.out            \
+clang   019charCounting2023.c -o a.out            \
         -std=c23                            \
         -Wall -Wextra -Werror -Wpedantic -Wno-parentheses   \
         -fsanitize=address,undefined        \
@@ -21,6 +21,11 @@ clang   ex1-7.c -o a.out            \
 
 int main(void) {
 
-    printf("Value of EOF = %d", EOF);
+    long nc = 0;
+    while ( getchar() !=EOF ) {
+        ++nc;
+    }
+    printf("%ld\n", nc);
+
     return EXIT_SUCCESS;
 }
