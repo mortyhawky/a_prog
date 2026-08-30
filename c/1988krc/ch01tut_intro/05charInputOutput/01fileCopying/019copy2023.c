@@ -14,6 +14,9 @@ clang   019copy2023.c -o a.out            \
         -fsanitize=address,undefined        \
         -g3 -O0                             \
         && ./a.out; printf "\n*-> Exit code = $? <-*\n\n"
+
+ * Test the program:
+cat hello2023.c | ./a.out
 */
 #include <stdio.h>
 #include <stdlib.h>
