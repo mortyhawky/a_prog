@@ -1,43 +1,101 @@
+/*#include <stdio.h>*/                                  /* c_014_01 */
 /*
-c /a/prog/c/
+c /a/prog/c/1978kr-cc4e/01/p014/
 
-gcc     main_template.c -o a.out            \
-        -std=c23                            \
-        -Wall -Wextra -Werror -Wpedantic    \
-        -fsanitize=address,undefined        \
-        -g3 -O0                             \
-        && ./a.out; printf "\n*-> Exit code = $? <-*\n\n"
+gcc p014-c78.c -o a.out -ansi && ./a.out; echo "$?"
 
-clang   main_template.c -o a.out            \
-        -std=c23                            \
-        -Wall -Wextra -Werror -Wpedantic    \
-        -fsanitize=address,undefined        \
-        -g3 -O0                             \
-        && ./a.out; printf "\n*-> Exit code = $? <-*\n\n"
+copy input to output; 1st version 
+exit with: Ctrl-d
+prints     (^C)      (255)
 */
 
-#include <stdint.h>     // for fixed-width integer types      (uint8_t, int8_t)
-#include <inttypes.h>   // for portable printf format macros  (PRIu8,   PRId8)
-#include <stdio.h>      // for printf()
-#include <stdlib.h>     // for EXIT_SUCCESS/EXIT_FAILURE
+/*
+main()
+{
+    int c;
+    c = getchar();
 
-#define DEGREE_SIGN "\u00B0"
-#define MIN_WINTER_TEMP -11
-#define WINTER_TEMP     -9
+    while (c != EOF) {
+        putchar(c);
+        c = getchar();
+    }
+}
+*/
+
+// C23 version:
+//
+/*
+  c /a/prog/c/
+
+gcc     p014-c23.c -o a.out            \
+        -std=c23                            \
+        -Wall -Wextra -Werror -Wpedantic    \
+        -fsanitize=address,undefined        \
+        -g3 -O0                             \
+        && ./a.out; printf "\n*-> Exit code = $? <-*\n\n"
+
+clang   p014-c23.c -o a.out            \
+        -std=c23                            \
+        -Wall -Wextra -Werror -Wpedantic    \
+        -fsanitize=address,undefined        \
+        -g3 -O0                             \
+        && ./a.out; printf "\n*-> Exit code = $? <-*\n\n"
+  */
+
+// int getchar(void)
+// int putchar( int ch );
+// Writes a character ch to stdout. Internally, the character is
+// converted to unsigned char just before being written.
+// Equivalent to putc(ch, stdout).
+// Parameters
+// ch 	- 	character to be written
+// Return value:
+// On success, returns the written character.
+// On failure, returns EOF and sets the error indicator
+// (see ferror()) on stdout. 
+//
+// Ctrl-D causes the terminal to provide an end-of-file condition;
+// Ctrl-D itself is not EOF
+#include <stdio.h>      // getchar(), putchar(), printf(), EOF
+#include <stdlib.h>     // EXIT_SUCCESS
+
+#define CURSOR_UP "\033[1A\r"
+#define NL        '\n'
 
 int main(void) {
-    printf("main_template.c\n");
-    char lang[] = "C";
-    uint8_t version = 23;
-    printf("Decimal     : %s%" PRIu8 "\n", lang, version);
-    printf("Hex         : %s0x%02X\n", lang, version);
+    printf(
+        "Use Ctrl-D to provide an EOF condition and exit.\n"
+        "Because Ctrl-C won't print the Exit code.\n"
+        "On my system, EOF = %d\n", EOF
+    );
 
-    int8_t winter_temp = WINTER_TEMP;
-    if ( winter_temp < MIN_WINTER_TEMP ) {
-        // Exit code = 1 if winter_temp is less than MIN_TEMP
-        return EXIT_FAILURE;
+    int ch = getchar();
+    while ( ch != EOF ) {
+        // fclose(stdout);
+        int ret = putchar(ch);
+        //ret = EOF;
+        if (ret == EOF) {
+            return EXIT_FAILURE;
+        }
+        if( ret == NL ) {
+            printf(
+                "%s", 
+                CURSOR_UP
+            );
+            printf(
+                "\\n ret = \\n%3d  0x%02X", 
+                ret, ret
+            );
+        }
+        else {
+            printf( 
+                "%2s %c %3d  0x%02X", 
+                "  ret =", ret, ret, ret
+            );
+        }
+        puts("");
+        ch = getchar();
     }
-    printf("Winter temp : %" PRId8 "%sC\n", winter_temp, DEGREE_SIGN);
 
     return EXIT_SUCCESS;
 }
