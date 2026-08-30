@@ -43,8 +43,17 @@ clang   020LineCount2023.c -o a.out            \
 #include <stdio.h>
 #include <stdlib.h>
 
+// Count lines in input
 int main(void) {
 
+    int ch = 0;
+    int nl = 0;
+    while ( ( ch = getchar() ) != EOF ) {
+        if ( '\n' == ch ) {
+            ++nl;
+        }
+    }
+    printf("%d\n", nl);
 
     return EXIT_SUCCESS;
 }
