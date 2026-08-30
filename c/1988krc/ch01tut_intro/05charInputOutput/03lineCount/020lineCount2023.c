@@ -1,6 +1,6 @@
-/* 1.5.2 Character Counting
+/* 1.5.3 Line Counting page 20
 
-c /a/prog/c/1988krc/ch01tut_intro/05charInputOutput/02charCounting/
+c /a/prog/c/1988krc/ch01tut_intro/05charInputOutput/03lineCount
 
 gcc     019charCounting2023ver2.c -o a.out            \
         -std=c23                            \
