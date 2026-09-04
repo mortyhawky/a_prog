@@ -1,4 +1,4 @@
-/* Exercise 1-8
+/* Exercise 1-9
  * Write a program to copy its input to its output,
  * replacing each string of one or more blanks by a single blank.
 
@@ -12,8 +12,6 @@ gcc       ver01.c -o a.out            \
           && ./a.out; printf "\n-->  Exit code=$?  <-- \n"
 
  */
-#include <stdint.h>
-#include <inttypes.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -33,18 +31,25 @@ int main(void) {
     
     // Read in data:
     while( (ch = getchar() ) != EOF ) {
-        // count occurrences, from most frequent to least frequent:
+        // Convert any number of blanks following a blank.
         if( ' ' == ch ) {
-            ++blank;
+            putchar(' ');   // always print one space
+            ++blank;        // counting the output blanks.
             while( (ch = getchar() ) == ' ' ) {
-                ;   // Consume spaces, that appears more than once.
+                ;   // Consume blanks.
             }
         }
-        else if( '\n' == ch ) {
-            ++newline;
+        if( EOF == ch ) {   // Catch any trailing spaces.
+            break;
         }
-        else if( '\t' == ch ) {
-            ++tab;
+        // Can't be else if, because if a newline follows a space it wouldn't be counted.
+        if( '\n' == ch ) {
+            ++newline;      // keep the counting of newlines.
+        }
+        // Can't be else if, because if a tab follows a space it wouldn't be counted.
+        if( '\t' == ch ) {
+            ++tab;          // also keep the counting of tabs.
+            ch = ' ';       // if we have only tab between words, there would be no space.
         }
     putchar(ch);
     }
@@ -55,8 +60,6 @@ int main(void) {
     printf("tab      = %zu \n", tab    );
     printf("newline  = %zu \n", newline);
     printf("int ch   = %d  \n", ch     );
-
-
 
     return EXIT_SUCCESS;
 }
