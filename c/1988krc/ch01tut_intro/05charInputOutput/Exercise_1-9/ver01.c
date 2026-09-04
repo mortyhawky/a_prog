@@ -1,6 +1,8 @@
 /* Exercise 1-8
- * Write a program to count blanks, tabs and newline.
-c /a/prog/c/1988krc/ch01tut_intro/05charInputOutput/Exercise_1-8/
+ * Write a program to copy its input to its output,
+ * replacing each string of one or more blanks by a single blank.
+
+c /a/prog/c/1988krc/ch01tut_intro/05charInputOutput/Exercise_1-9/
 
 gcc       ver01.c -o a.out            \
           -std=c23                            \
@@ -34,6 +36,9 @@ int main(void) {
         // count occurrences, from most frequent to least frequent:
         if( ' ' == ch ) {
             ++blank;
+            while( (ch = getchar() ) == ' ' ) {
+                ;   // Consume spaces, that appears more than once.
+            }
         }
         else if( '\n' == ch ) {
             ++newline;
@@ -41,6 +46,7 @@ int main(void) {
         else if( '\t' == ch ) {
             ++tab;
         }
+    putchar(ch);
     }
 
     // Show results:
@@ -49,6 +55,8 @@ int main(void) {
     printf("tab      = %zu \n", tab    );
     printf("newline  = %zu \n", newline);
     printf("int ch   = %d  \n", ch     );
+
+
 
     return EXIT_SUCCESS;
 }
