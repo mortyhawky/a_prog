@@ -1,30 +1,424 @@
 .
+├── asm
 ├── bash
 │   ├── asdf.sh
-│   └── qwer
+│   ├── qwer
+│   └── ysap
+│       ├── bash-course
+│       │   ├── foo
+│       │   │   ├── bashrc
+│       │   │   ├── done
+│       │   │   │   ├── 256-colors
+│       │   │   │   ├── arithmetic-expression
+│       │   │   │   ├── associative-arrays
+│       │   │   │   ├── braces-numeric
+│       │   │   │   ├── case
+│       │   │   │   ├── char-by-char
+│       │   │   │   ├── check-terminal
+│       │   │   │   ├── command-substitution
+│       │   │   │   ├── complex.csv
+│       │   │   │   ├── conditionals
+│       │   │   │   ├── curly-brace-expansion
+│       │   │   │   ├── curly-vs-parens
+│       │   │   │   ├── file.txt
+│       │   │   │   ├── for-loops
+│       │   │   │   ├── greeter
+│       │   │   │   ├── hello
+│       │   │   │   ├── indexed-arrays
+│       │   │   │   ├── loop
+│       │   │   │   ├── move-cursor
+│       │   │   │   ├── parameter-expansion
+│       │   │   │   ├── process-substitution
+│       │   │   │   ├── read-input
+│       │   │   │   ├── return-codes
+│       │   │   │   ├── say-bye
+│       │   │   │   ├── say-hi
+│       │   │   │   └── simple.csv
+│       │   │   ├── files
+│       │   │   │   ├── bar.jpg
+│       │   │   │   ├── bar.txt
+│       │   │   │   ├── baz.jpg
+│       │   │   │   ├── baz.txt
+│       │   │   │   ├── foo.jpg
+│       │   │   │   └── foo.txt
+│       │   │   └── lib
+│       │   │       └── greetings
+│       │   ├── notes
+│       │   │   ├── 00-00-intro
+│       │   │   │   └── readme.md
+│       │   │   ├── 01-00-terminal-and-finder
+│       │   │   │   └── readme.md
+│       │   │   ├── 01-01-file-manipulation
+│       │   │   │   └── readme.md
+│       │   │   ├── 01-02-hidden-files
+│       │   │   │   └── readme.md
+│       │   │   ├── 01-03-searching-in-files
+│       │   │   │   └── readme.md
+│       │   │   ├── 01-04-pager
+│       │   │   │   └── readme.md
+│       │   │   ├── 02-00-man-pages
+│       │   │   │   └── readme.md
+│       │   │   ├── 02-01-programs-and-commands
+│       │   │   │   └── readme.md
+│       │   │   ├── 02-02-more-variables
+│       │   │   │   └── readme.md
+│       │   │   ├── 02-03-vim-crash-course
+│       │   │   │   └── readme.md
+│       │   │   ├── 02-04-file-permissions
+│       │   │   │   └── readme.md
+│       │   │   ├── 03-00-actually-scripting
+│       │   │   │   └── readme.md
+│       │   │   ├── 03-01-taking-input
+│       │   │   │   └── readme.md
+│       │   │   ├── 03-02-functions
+│       │   │   │   └── readme.md
+│       │   │   ├── 03-03-conditionals
+│       │   │   │   └── readme.md
+│       │   │   ├── 03-04-for-loops
+│       │   │   │   └── readme.md
+│       │   │   ├── 03-05-io
+│       │   │   │   └── readme.md
+│       │   │   ├── 03-06-what-we-have
+│       │   │   │   ├── 00-script
+│       │   │   │   ├── 01-case
+│       │   │   │   └── readme.md
+│       │   │   ├── 04-00-case-statements
+│       │   │   │   ├── 00-case
+│       │   │   │   ├── 01-simple
+│       │   │   │   ├── 02-always-fallthrough
+│       │   │   │   ├── 03-try-again
+│       │   │   │   └── readme.md
+│       │   │   ├── 04-01-indexed-arrays
+│       │   │   │   └── readme.md
+│       │   │   ├── 04-02-associative-arrays
+│       │   │   │   └── readme.md
+│       │   │   ├── 04-03-IFS-variable
+│       │   │   │   └── readme.md
+│       │   │   ├── 04-04-command-substitution
+│       │   │   │   └── readme.md
+│       │   │   ├── 04-05-arithmetic-expression
+│       │   │   │   └── readme.md
+│       │   │   ├── 04-06-process-substitution
+│       │   │   │   └── readme.md
+│       │   │   ├── 04-07-what-we-have
+│       │   │   │   ├── 00-cmds-and-math
+│       │   │   │   ├── 01-arrays
+│       │   │   │   └── readme.md
+│       │   │   ├── 05-00-cut-tr
+│       │   │   │   ├── complex.csv
+│       │   │   │   ├── readme.md
+│       │   │   │   └── simple.csv
+│       │   │   ├── 05-01-sed-awk-grep
+│       │   │   │   └── readme.md
+│       │   │   ├── 05-02-find-cmd
+│       │   │   │   └── readme.md
+│       │   │   ├── 06-00-bash-arguments
+│       │   │   │   ├── 00-simple-script
+│       │   │   │   ├── 01-syntax-error
+│       │   │   │   ├── 02-undefined
+│       │   │   │   └── readme.md
+│       │   │   ├── 06-01-pipestatus
+│       │   │   │   └── readme.md
+│       │   │   ├── 06-02-timing
+│       │   │   │   └── readme.md
+│       │   │   ├── 07-00-sourcing
+│       │   │   │   └── readme.md
+│       │   │   ├── 07-01-curlies-vs-parens
+│       │   │   │   └── readme.md
+│       │   │   ├── 07-02-return-vs-output
+│       │   │   │   └── readme.md
+│       │   │   ├── 07-03-what-we-have
+│       │   │   │   ├── 00-simple
+│       │   │   │   ├── 01-better
+│       │   │   │   └── readme.md
+│       │   │   ├── 08-00-parameter-expansion
+│       │   │   │   └── readme.md
+│       │   │   ├── 08-01-array-expansion-chars
+│       │   │   │   └── readme.md
+│       │   │   ├── 09-00-basic-globbing
+│       │   │   │   └── readme.md
+│       │   │   ├── 09-01-extended-globbing
+│       │   │   │   └── readme.md
+│       │   │   ├── 09-02-glob-options
+│       │   │   │   └── readme.md
+│       │   │   ├── 10-00-brace-string-expansion
+│       │   │   │   └── readme.md
+│       │   │   ├── 10-01-braces-and-globbing
+│       │   │   │   └── readme.md
+│       │   │   ├── 10-02-braces-numeric
+│       │   │   │   └── readme.md
+│       │   │   ├── 11-00-printf
+│       │   │   │   └── readme.md
+│       │   │   ├── 11-01-date-formatting
+│       │   │   │   └── readme.md
+│       │   │   ├── 11-02-regex
+│       │   │   │   ├── 00-simple
+│       │   │   │   ├── 01-cringe
+│       │   │   │   ├── 01-fine
+│       │   │   │   ├── 02-based
+│       │   │   │   ├── 02-good
+│       │   │   │   ├── images
+│       │   │   │   │   ├── fun family party - 2022-10-31.jpg
+│       │   │   │   │   └── not fun enemy party - 2022-11-27.jpg
+│       │   │   │   ├── readme.md
+│       │   │   │   └── want.txt
+│       │   │   ├── 11-03-mapfile-readarray
+│       │   │   │   ├── 00-while-read
+│       │   │   │   ├── 01-mapfile
+│       │   │   │   ├── 02-mapfile-trim
+│       │   │   │   ├── 03-mapfile-limit
+│       │   │   │   ├── 04-mapfile-callback
+│       │   │   │   ├── data.txt
+│       │   │   │   └── readme.md
+│       │   │   ├── 12-00-test-vs-bracket
+│       │   │   │   ├── 00-simple-test
+│       │   │   │   ├── 01-simple-[
+│       │   │   │   ├── 02-simple-[[
+│       │   │   │   ├── 03-patterns
+│       │   │   │   ├── 04-pattern-fail
+│       │   │   │   ├── 05-disable-pattern
+│       │   │   │   ├── 06-numbers
+│       │   │   │   ├── 07-number-fix-1
+│       │   │   │   ├── 08-number-fix-2
+│       │   │   │   ├── foo.jpg
+│       │   │   │   ├── readme.md
+│       │   │   │   └── test.jpg
+│       │   │   ├── 12-01-special-strings
+│       │   │   │   └── readme.md
+│       │   │   ├── 13-00-trap-signals
+│       │   │   │   ├── 00-simple-exit
+│       │   │   │   ├── 01-exit-code
+│       │   │   │   ├── 02-exit-override
+│       │   │   │   ├── 03-trap-debug
+│       │   │   │   ├── 04-trap-info
+│       │   │   │   └── readme.md
+│       │   │   ├── 13-01-named-pipes
+│       │   │   │   ├── 00-basic-reader
+│       │   │   │   ├── 01-forever-read
+│       │   │   │   ├── 02-client-writer
+│       │   │   │   ├── 03-all-in-one
+│       │   │   │   └── readme.md
+│       │   │   ├── 14-00-color
+│       │   │   │   └── readme.md
+│       │   │   ├── 14-01-cursor-commands
+│       │   │   │   ├── 00-move-cursor
+│       │   │   │   └── readme.md
+│       │   │   ├── 14-02-isatty
+│       │   │   │   └── readme.md
+│       │   │   ├── 15-00-interactive-ps1
+│       │   │   │   └── readme.md
+│       │   │   ├── 15-01-customize-bashrc
+│       │   │   │   └── readme.md
+│       │   │   ├── 15-02-readline-and-such
+│       │   │   │   └── readme.md
+│       │   │   ├── 16-00-pitfall-ls-list
+│       │   │   │   ├── bad
+│       │   │   │   ├── files
+│       │   │   │   │   ├── a
+│       │   │   │   │   ├── b
+│       │   │   │   │   ├── c
+│       │   │   │   │   └── d      e
+│       │   │   │   ├── good
+│       │   │   │   └── readme.md
+│       │   │   ├── 16-01-aliases-with-arguments
+│       │   │   │   └── readme.md
+│       │   │   ├── 16-02-ansi-length
+│       │   │   │   └── readme.md
+│       │   │   ├── 17-00-forkbomb
+│       │   │   │   ├── bomb.txt
+│       │   │   │   ├── diagram.txt
+│       │   │   │   └── readme.md
+│       │   │   ├── concat-readmes
+│       │   │   ├── format-titles
+│       │   │   └── new-section
+│       │   ├── README.md
+│       │   ├── tools
+│       │   │   ├── assets
+│       │   │   │   └── logo.png
+│       │   │   ├── finalcut-xml-to-chapters
+│       │   │   ├── fonts
+│       │   │   │   ├── FiraMono-Bold.ttf
+│       │   │   │   ├── FiraMono-Medium.ttf
+│       │   │   │   ├── FiraMono-Regular.ttf
+│       │   │   │   └── OFL.txt
+│       │   │   ├── make-all-metadata-images
+│       │   │   └── make-metadata-image
+│       │   └── website
+│       │       ├── download.html
+│       │       ├── index.html
+│       │       ├── make-curl-website
+│       │       ├── Makefile
+│       │       └── style.css
+│       └── e047-c11-s02
+│           ├── 00-simple
+│           ├── 01-cringe
+│           ├── 01-fine
+│           ├── 02-based
+│           ├── 02-good
+│           ├── fun family party - 2022.09.08.jpg
+│           ├── fun family party - 2022-10-31.jpeg
+│           ├── images
+│           │   ├── fun family party - 2022-10-31.jpg
+│           │   └── not fun enemy party - 2022-11-27.jpg
+│           ├── not fun enemy party - 2022-11-27.jpeg
+│           ├── readme.md
+│           ├── regex01.sh
+│           └── want.txt
 ├── c
-│   ├── codevault
-│   │   ├── mem-mov-cpy
-│   │   │   └── mem-move-cpy.c
-│   │   └── threads
-│   │       └── threads01.c
-│   ├── c-primer
+│   ├── 1978kr-cc4e
+│   │   ├── 00
+│   │   │   └── 1978krc-00cover.PDF
+│   │   ├── 01
+│   │   │   ├── 1978krc-ch01.pdf
+│   │   │   ├── ex1-3
+│   │   │   │   ├── 1-3.c
+│   │   │   │   ├── a.out
+│   │   │   │   └── Exercise_1-3.txt
+│   │   │   ├── ex1-4
+│   │   │   │   ├── a.out
+│   │   │   │   └── ex_1-4.c
+│   │   │   ├── ex1-5
+│   │   │   │   ├── a.out
+│   │   │   │   └── ex_1-5.c
+│   │   │   ├── p006
+│   │   │   │   ├── 01hello-krc1978.c
+│   │   │   │   └── 03-hello-c23.c
+│   │   │   ├── p007
+│   │   │   │   ├── 01esc-seq.c
+│   │   │   │   └── 02esc-seq.c
+│   │   │   ├── p008
+│   │   │   │   ├── c_008_01-1978.c
+│   │   │   │   └── c_008_01-c23.c
+│   │   │   ├── p011
+│   │   │   │   ├── 011-c23.c
+│   │   │   │   └── a.out
+│   │   │   ├── p013
+│   │   │   │   ├── 013c23.c
+│   │   │   │   └── 013c78.c
+│   │   │   ├── p014
+│   │   │   │   ├── a.out
+│   │   │   │   ├── main_template.c
+│   │   │   │   ├── p014-c23.c
+│   │   │   │   └── p014-c78.c
+│   │   │   ├── p015
+│   │   │   │   ├── a.out
+│   │   │   │   └── p015-c23.c
+│   │   │   └── p016
+│   │   │       ├── a.out
+│   │   │       └── p016-c23.c
+│   │   ├── 02
+│   │   │   └── exercise_rs2
+│   │   │       └── rs-2.c
+│   │   └── bookmark.md
+│   ├── 1988krc
+│   │   ├── 01-01
+│   │   │   ├── p010-hello88.c
+│   │   │   └── p010-helloC23.c
+│   │   ├── 01-02
+│   │   │   ├── a.out
+│   │   │   ├── p012_temp88.c
+│   │   │   ├── p012_tempC23.c
+│   │   │   ├── p015-c23.c
+│   │   │   └── p015-c88.c
+│   │   ├── bookmark.md
+│   │   ├── ch01tut_intro
+│   │   │   ├── 01gettingStarted
+│   │   │   │   ├── a.out
+│   │   │   │   ├── hello1988.c
+│   │   │   │   └── hello2023.c
+│   │   │   ├── 02variablesAndArithmeticExpressions
+│   │   │   │   └── fahr-cels1988.c
+│   │   │   └── 05charInputOutput
+│   │   │       ├── 01fileCopying
+│   │   │       │   ├── 018getchar_putchar1988.c
+│   │   │       │   ├── 018getchar_putchar2023.c
+│   │   │       │   ├── 019copy1988.c
+│   │   │       │   ├── 019copy2023.c
+│   │   │       │   ├── a.out
+│   │   │       │   ├── ex1-6.c
+│   │   │       │   ├── ex1-7.c
+│   │   │       │   ├── Exit
+│   │   │       │   └── hello2023.c
+│   │   │       ├── 02charCounting
+│   │   │       │   ├── 019charCounting2023.c
+│   │   │       │   ├── 019charCounting2023ver2.c
+│   │   │       │   └── a.out
+│   │   │       ├── 03lineCount
+│   │   │       │   ├── 020lineCount2023.c
+│   │   │       │   ├── a.out
+│   │   │       │   └── ex1-8countBlanks.c
+│   │   │       ├── Exercise_1-8
+│   │   │       │   ├── a.out
+│   │   │       │   ├── exercise_1-8.md
+│   │   │       │   ├── Exit
+│   │   │       │   ├── gcc
+│   │   │       │   └── ver01.c
+│   │   │       └── Exercise_1-9
+│   │   │           ├── a.out
+│   │   │           ├── exercise_1-9.md
+│   │   │           ├── printf
+│   │   │           └── ver01.c
+│   │   ├── krc_1988-1.pdf
+│   │   └── yt.txt
+│   ├── 2004cprimer5
 │   │   ├── 01GettingReady
-│   │   │   ├── 01.01example
-│   │   │   ├── 01.01example.c
-│   │   │   ├── 01.02concrete
-│   │   │   ├── 01.02concrete.c
-│   │   │   └── bookmark
+│   │   │   ├── 01.01com.c
+│   │   │   ├── 01.01uncom.c
+│   │   │   ├── 01.02com.c
+│   │   │   ├── 01.02uncom.c
+│   │   │   ├── a.out
+│   │   │   └── bookmark.md
 │   │   ├── 02IntroducingC
 │   │   ├── bookmark.md
 │   │   ├── c-primer-5th.pdf
 │   │   ├── c-primer-annotation01.pdf
 │   │   ├── c-primer.pdf
 │   │   └── versions.txt
-│   ├── effective-c
+│   ├── 2016giraffAcademy
+│   │   ├── 01.c
+│   │   ├── bookmark.md
+│   │   └── Giraffe
+│   │       ├── a.out
+│   │       ├── bin
+│   │       │   └── Debug
+│   │       │       └── Giraffe
+│   │       ├── Giraffe.cbp
+│   │       ├── Giraffe.depend
+│   │       ├── Giraffe.layout
+│   │       ├── main.c
+│   │       └── obj
+│   │           └── Debug
+│   │               └── main.o
+│   ├── 2020effective-c
 │   │   └── effective-c.pdf
+│   ├── 2023lowlevel
+│   │   ├── 2023lowlevelprogramming.pdf
+│   │   └── bookmark.txt
+│   ├── a.out
+│   ├── brocode
+│   │   └── enum
+│   │       ├── a.out
+│   │       ├── main.c
+│   │       ├── ver01.c
+│   │       └── ver02.c
+│   ├── codevault
+│   │   ├── mem-mov-cpy
+│   │   │   └── mem-move-cpy.c
+│   │   └── threads
+│   │       ├── a.out
+│   │       ├── threads01
+│   │       ├── threads01.c
+│   │       ├── threads02.c
+│   │       └── threads03.c
+│   ├── main_template.c
+│   ├── morty
+│   │   ├── main_template.c
+│   │   ├── modulo
+│   │   └── reverse_string
+│   │       ├── a.out
+│   │       ├── main.c
+│   │       └── reverse_string.pdf
 │   └── portfolio
-│       ├── 01hello.c
 │       ├── pointers
 │       │   ├── 01intro
 │       │   ├── 01intro.c
@@ -32,18 +426,33 @@
 │       │   ├── 02prog2.c
 │       │   ├── 03swap
 │       │   └── 03swap.c
-│       ├── struct01.c
-│       ├── struct02.c
-│       └── struct03.c
+│       └── struct
+│           ├── 01hello.c
+│           ├── struct01.c
+│           ├── struct02.c
+│           └── struct03.c
 ├── kcal
 │   ├── ideas.txt
 │   └── kcal.c
 ├── python
 │   └── asdf
 ├── README.md
+├── regex
+│   ├── CoreySchafer
+│   │   ├── example01.md
+│   │   ├── regex.md
+│   │   └── text.txt
+│   └── ysap
+│       ├── example01.sh
+│       ├── example02.sh
+│       ├── example03.sh
+│       ├── example04.sh
+│       └── text.txt
 ├── test
 ├── test1
 ├── test2
-└── tree.txt
+├── tree.txt
+└── vim
+    └── commands.md
 
-14 directories, 33 files
+137 directories, 319 files
