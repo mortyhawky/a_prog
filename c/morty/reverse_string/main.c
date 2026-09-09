@@ -1,9 +1,9 @@
 /*
 c /a/prog/c/morty/reverse_string
 
-gcc -std=c23 -Wall -Wextra -Werror -Wpedantic \
-    -fsanitize=address,undefined -g3 \
-    main.c -o a.out && ./a.out ; echo "Exit Code = "$?
+gcc   -std=c23 -Wall -Wextra -Werror -Wpedantic \
+      -fsanitize=address,undefined -g3 \
+      main.c -o a.out && ./a.out ; echo "Exit Code = "$?
 
 clang -std=c23 -Wall -Wextra -Werror -Wpedantic \
       -fsanitize=address,undefined -g3 \
