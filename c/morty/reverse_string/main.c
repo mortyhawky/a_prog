@@ -1,5 +1,5 @@
 /*
-/a/prog/c/morty/reverse_string/main.c
+c /a/prog/c/morty/reverse_string
 
 gcc -std=c23 -Wall -Wextra -Werror -Wpedantic \
     -fsanitize=address,undefined -g3 \
