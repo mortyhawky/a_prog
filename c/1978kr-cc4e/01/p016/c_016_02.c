@@ -9,28 +9,44 @@ gcc     c_016_02.c -o a.out                 \
         && ./a.out; printf "\n*-> Exit code = $? <-*\n\n"
 
 clang   c_016_02.c -o a.out                 \
-        -std=c23                            \
+        -g3 -O0 -std=c23                    \
         -Wall -Wextra -Werror -Wpedantic    \
         -fsanitize=address,undefined        \
-        -g3 -O0                             \
         && ./a.out; printf "\n*-> Exit code = $? <-*\n\n"
-  */
 
-#include <inttypes.h>
-#include <stdint.h>
+Test:
+./a.out; printf "\n*-> Exit code = $? <-*\n\n"
+echo    "1234567"   | ./a.out; printf "$?\n"
+echo    ""          | ./a.out; printf "$?\n"
+echo    "\t"        | ./a.out; printf "$?\n"
+echo -e "\t"        | ./a.out; printf "$?\n"
+
+printf  "1234567"   | ./a.out; printf "$?\n"
+printf  ""          | ./a.out; printf "$?\n"
+printf  "\t"        | ./a.out; printf "$?\n"
+
+*/
 
 #include <stdio.h>
 #include <stdlib.h>
 
-// count characters in input
+// Count characters in input.
+// K&R C first edition 1978. Page 16.
+// Adapted for C23 by Morty, Sept.2026
 
 int main(void) {
     
-    for ( double nc = 0; getchar() != EOF; ++nc ) {
-        ;
+    int    c  = 0;
+    size_t nc = 0;
+    size_t nl = 0;
+    for ( nc = 0; (c = getchar()) != EOF; ++nc ) {
+        if ( '\n' == c ) {
+           nl++; // count newlines.
+           nc--; // "uni-count" charchters if we h have a newline.
+        }
     }
-    printf ("There was #%.0f characters in the input\n", 
-            nc
+    printf ("There was #%zu characters in your input.  Newlines = %zu\n", 
+            nc, nl
     );
 
     return EXIT_SUCCESS;

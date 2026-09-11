@@ -2,8 +2,10 @@
 
 ```
 Chapter 01
-pdf page 20 of 45
-c_016_01
+Orignal  book page 17
++4 pages =
+pdf page 21
+c_017_01
 Character Counting
 ```
 cc4e
