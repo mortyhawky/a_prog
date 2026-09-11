@@ -2,7 +2,9 @@
 
 ```
 Chapter 01
-Page 20 of 45
+pdf page 20 of 45
 c_016_01
 Character Counting
 ```
+cc4e
+[link](https://www.cc4e.com/lessons/python)
