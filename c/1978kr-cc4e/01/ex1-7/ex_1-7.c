@@ -28,21 +28,43 @@ clang-tidy ex_1-7.c -- -std=c23
 int main(void) {
 
     int ch           = 0;
-    int prevSpace    = 0;
-    while ( ( ch = getchar() ) != EOF ) {
-        if ( ch != ' ') {
-            printf ( "%c", ch );
-        }
-        if ( prevSpace ) {
-            getchar();
-            prevSpace = 0;
-        }
-        if ( ch == ' ' ) {
-            prevSpace = 1;
-        }
-    }
+    while ( ( ch = getchar() ) != EOF ) {  //main loop read char
 
-    printf ( "%zu blanks in output\n", outBlanks );
+        if ( ch != ' ' ) {
+            putchar(ch);           // Print all non-space chars.
+            continue;
+        }//fi
+
+        if ( ch == ' ') {          // detect if space.
+            do {
+                ch = getchar();    // Eat all spaces, until
+            } while (ch == ' ');   // we hit a non-space char.
+
+            if ( ch == EOF ) {
+                break;             // Break out of outer while loop
+            }
+
+            putchar ( ' ' );       // print only one space.
+            putchar ( ch );        // Print non-space char.
+        }//fi
+
+    }//main/outer while loop
 
     return EXIT_SUCCESS;
 }
+
+/********************  DEBUGGING *************************
+clang ex_1-7.c -o a.out                 \
+      -g3 -O0 -std=c23                    \
+      -Wall -Wextra -Werror -Wpedantic    \
+      -fsanitize=address,undefined
+
+gdb a.out
+
+b main
+r < 1.txt
+display (char)ch
+n
+n
+*/
+           
