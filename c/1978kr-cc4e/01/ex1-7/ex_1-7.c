@@ -28,27 +28,28 @@ clang-tidy ex_1-7.c -- -std=c23
 int main(void) {
 
     int ch           = 0;
-    while ( ( ch = getchar() ) != EOF ) {  //main loop read char
+    while ( ( ch = getchar() ) != EOF ) {  // main loop, read char
 
-        if ( ch != ' ' ) {
-            putchar(ch);           // Print all non-space chars.
+        if ( ch != ' ' ) {         // We have a non-space char.
+            putchar(ch);           // print all non-space chars
             continue;
-        }//fi
+        }
 
-        if ( ch == ' ') {          // detect if space.
-            do {
-                ch = getchar();    // Eat all spaces, until
-            } while (ch == ' ');   // we hit a non-space char.
+        // below here must be spaces (or EOF)
+        do {
+            ch = getchar();    // Eat all spaces, until
+        } while (ch == ' ');   // we hit a non-space char.
 
-            if ( ch == EOF ) {
-                break;             // Break out of outer while loop
-            }
+        // getchar() returns EOF when it reaches the end of the current input stream.
+        if ( ch == EOF ) {     // if we hit EOF,
+            break;             // break out of outer while loop.
+        }                      // This will end the program.
 
-            putchar ( ' ' );       // print only one space.
-            putchar ( ch );        // Print non-space char.
-        }//fi
+        // We have eaten all spaces so we print one (1) space.
+        putchar ( ' ' );       // print only one space.
+        putchar ( ch );        // Print ch gotten from do-while above.
 
-    }//main/outer while loop
+    } // outer while loop.
 
     return EXIT_SUCCESS;
 }
@@ -66,5 +67,33 @@ r < 1.txt
 display (char)ch
 n
 n
+
+
+set logging file ex_1-7-gdb.log
+set logging enabled on
+
+break main
+break 40        ch = getchar;
+break putchar
+display $edi
+display (char)$edi
+display (char)ch
+display ch
+
+run < 1.txt
+
+display $edi
+display (char)$edi
+
+c
+c
+c
+c
+c
+c
+
+set logging enabled off
+
+
 */
            

@@ -1,0 +1,192 @@
+Starting program: /a/prog/c/1978kr-cc4e/01/ex1-7/a.out < 1.txt
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/usr/lib/libthread_db.so.1".
+
+Breakpoint 1, putchar (c=77) at putchar.c:25
+25	{
+1: $edi = 77
+2: (char)$edi = 77 'M'
+Continuing.
+
+Breakpoint 1, putchar (c=111) at putchar.c:25
+25	{
+1: $edi = 111
+2: (char)$edi = 111 'o'
+Continuing.
+
+Breakpoint 1, putchar (c=114) at putchar.c:25
+25	{
+1: $edi = 114
+2: (char)$edi = 114 'r'
+Continuing.
+
+Breakpoint 1, putchar (c=116) at putchar.c:25
+25	{
+1: $edi = 116
+2: (char)$edi = 116 't'
+Continuing.
+
+Breakpoint 1, putchar (c=121) at putchar.c:25
+25	{
+1: $edi = 121
+2: (char)$edi = 121 'y'
+Continuing.
+
+Breakpoint 1, putchar (c=32) at putchar.c:25
+25	{
+1: $edi = 32
+2: (char)$edi = 32 ' '
+Continuing.
+
+Breakpoint 1, putchar (c=72) at putchar.c:25
+25	{
+1: $edi = 72
+2: (char)$edi = 72 'H'
+Continuing.
+
+Breakpoint 1, putchar (c=97) at putchar.c:25
+25	{
+1: $edi = 97
+2: (char)$edi = 97 'a'
+Continuing.
+
+Breakpoint 1, putchar (c=119) at putchar.c:25
+25	{
+1: $edi = 119
+2: (char)$edi = 119 'w'
+Continuing.
+
+Breakpoint 1, putchar (c=107) at putchar.c:25
+25	{
+1: $edi = 107
+2: (char)$edi = 107 'k'
+Continuing.
+
+Breakpoint 1, putchar (c=121) at putchar.c:25
+25	{
+1: $edi = 121
+2: (char)$edi = 121 'y'
+Continuing.
+
+Breakpoint 1, putchar (c=32) at putchar.c:25
+25	{
+1: $edi = 32
+2: (char)$edi = 32 ' '
+Continuing.
+
+Breakpoint 1, putchar (c=78) at putchar.c:25
+25	{
+1: $edi = 78
+2: (char)$edi = 78 'N'
+Continuing.
+
+Breakpoint 1, putchar (c=111) at putchar.c:25
+25	{
+1: $edi = 111
+2: (char)$edi = 111 'o'
+Continuing.
+
+Breakpoint 1, putchar (c=114) at putchar.c:25
+25	{
+1: $edi = 114
+2: (char)$edi = 114 'r'
+Continuing.
+
+Breakpoint 1, putchar (c=119) at putchar.c:25
+25	{
+1: $edi = 119
+2: (char)$edi = 119 'w'
+Continuing.
+
+Breakpoint 1, putchar (c=97) at putchar.c:25
+25	{
+1: $edi = 97
+2: (char)$edi = 97 'a'
+Continuing.
+
+Breakpoint 1, putchar (c=121) at putchar.c:25
+25	{
+1: $edi = 121
+2: (char)$edi = 121 'y'
+Continuing.
+
+Breakpoint 1, putchar (c=32) at putchar.c:25
+25	{
+1: $edi = 32
+2: (char)$edi = 32 ' '
+Continuing.
+
+Breakpoint 1, putchar (c=33) at putchar.c:25
+25	{
+1: $edi = 33
+2: (char)$edi = 33 '!'
+Continuing.
+
+Breakpoint 1, putchar (c=32) at putchar.c:25
+25	{
+1: $edi = 32
+2: (char)$edi = 32 ' '
+Continuing.
+
+Breakpoint 1, putchar (c=42) at putchar.c:25
+25	{
+1: $edi = 42
+2: (char)$edi = 42 '*'
+Continuing.
+
+Breakpoint 1, putchar (c=32) at putchar.c:25
+25	{
+1: $edi = 32
+2: (char)$edi = 32 ' '
+Continuing.
+
+Breakpoint 1, putchar (c=10) at putchar.c:25
+25	{
+1: $edi = 10
+2: (char)$edi = 10 '\n'
+Continuing.
+
+Breakpoint 1, putchar (c=97) at putchar.c:25
+25	{
+1: $edi = 97
+2: (char)$edi = 97 'a'
+Continuing.
+
+Breakpoint 1, putchar (c=115) at putchar.c:25
+25	{
+1: $edi = 115
+2: (char)$edi = 115 's'
+Continuing.
+
+Breakpoint 1, putchar (c=100) at putchar.c:25
+25	{
+1: $edi = 100
+2: (char)$edi = 100 'd'
+Continuing.
+
+Breakpoint 1, putchar (c=102) at putchar.c:25
+25	{
+1: $edi = 102
+2: (char)$edi = 102 'f'
+Continuing.
+
+Breakpoint 1, putchar (c=32) at putchar.c:25
+25	{
+1: $edi = 32
+2: (char)$edi = 32 ' '
+Continuing.
+
+Breakpoint 1, putchar (c=10) at putchar.c:25
+25	{
+1: $edi = 10
+2: (char)$edi = 10 '\n'
+Continuing.
+[Inferior 1 (process 27049) exited normally]
+❌️ The program is not being run.
+❌️ The program is not being run.
+❌️ The program is not being run.
+❌️ The program is not being run.
+❌️ The program is not being run.
+❌️ The program is not being run.
+❌️ The program is not being run.
+❌️ The program is not being run.
