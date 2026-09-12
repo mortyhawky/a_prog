@@ -21,4 +21,6 @@ clang   [filename].c -o a.out                 \
 ### Debugging
 ```bash
 gdb a.out
+b main
+r < test.txt
 ```
