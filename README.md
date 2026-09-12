@@ -10,7 +10,7 @@ git init
 //git add README.md
 //git commit -m "Initial commit"
 
-printf "a.out" >> .gitignore
+printf "a.out\n" >> .gitignore && b .gitignore
 
 gh auth status
 gh auth login
@@ -25,4 +25,5 @@ gs
 ga
 gc
 gp
+gitall
 ```
