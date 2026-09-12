@@ -1,0 +1,5 @@
+K&R C 1st. edition from 1978
+Exercise 1-7. Write a program to copy its input to its output, 
+              replacing each string of one or more blanks
+              by a single blank
+Solution adapted to C23 by Morty. Sept. 2026
