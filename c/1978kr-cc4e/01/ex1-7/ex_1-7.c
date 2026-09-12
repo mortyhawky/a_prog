@@ -28,6 +28,7 @@ clang-tidy ex_1-7.c -- -std=c23
 int main(void) {
 
     int ch           = 0;
+    size_t eaten     = 0;
     while ( ( ch = getchar() ) != EOF ) {  // main loop, read char
 
         if ( ch != ' ' ) {         // We have a non-space char.
@@ -35,9 +36,13 @@ int main(void) {
             continue;
         }
 
-        // below here must be spaces (or EOF)
+        // ch must be a space here.
+        // Consume the rest of this run of spaces.
         do {
             ch = getchar();    // Eat all spaces, until
+            if ( ch == ' ' ) {
+                eaten++;
+            }
         } while (ch == ' ');   // we hit a non-space char.
 
         // getchar() returns EOF when it reaches the end of the current input stream.
@@ -50,6 +55,8 @@ int main(void) {
         putchar ( ch );        // Print ch gotten from do-while above.
 
     } // outer while loop.
+
+    printf ( "Totally spaces eaten: %zu\n", eaten );
 
     return EXIT_SUCCESS;
 }
