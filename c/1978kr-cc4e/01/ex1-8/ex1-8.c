@@ -26,7 +26,24 @@ clang   ex1-8.c -o a.out                 \
 
 int main(void) {
 
-    // your code starts here.
+    int c = 0;
+    while ( (c = getchar() ) != EOF ) {
+        if ( c == '\t' ) {
+            //printf ( "%s", ">\b-" );
+            //printf ( "<TAB>" );
+            printf ( " \'\\t\' " );
+            continue;
+        }
+        
+        if ( c == '\b' ) {
+            //printf ( "%s", "<\b-" );
+            //printf ( "<BS>" );
+            printf ( " \'\\b\' " );
+            continue;
+        }
+
+        putchar(c);
+    }
     
     return EXIT_SUCCESS;
 }
