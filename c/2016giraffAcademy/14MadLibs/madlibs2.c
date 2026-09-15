@@ -37,6 +37,12 @@ n
 // This give us effectivly MAX_LEN - 2 chars input
 // because \n gets converted to \0 and
 
+int trim_newline(char *str) {
+    printf("trim_newline: -> remove '\n' \n");
+    printf("and make sure string is '\0' terminated \n");
+
+    return EXIT_SUCCESS;
+
 int main()
 {
     char color       [MAX_LEN] = "";
@@ -45,10 +51,12 @@ int main()
     size_t len                 = 0;
     char* status               = nullptr;
 
+
     printf("Enter a color.....: ");
     
     status = fgets(color, MAX_LEN, stdin);
     printf("status = %p\n", status);
+    int t = trim_newline(color);
 
     return EXIT_FAILURE;
 
