@@ -1,13 +1,13 @@
 /*
 c /a/prog/c/2016giraffAcademy/03madLibs
 
-gcc       double.c -o a.out                         \
+gcc       madlibs.c -o a.out             \
           -g3 -O0 -std=c23                          \
           -Wall -Wextra -Werror -Wpedantic          \
           -fanalyzer -fsanitize=address,undefined   \
           && ./a.out ; printf "Exit code = $?\n"
 
-clang     double.c -o a.out                         \
+clang     madlibs.c -o a.out             \
           -g3 -O0 -std=c23                          \
           -Wall -Wextra -Werror -Wpedantic          \
           -fsanitize=address,undefined
