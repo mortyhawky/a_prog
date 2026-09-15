@@ -47,6 +47,8 @@ display/8db &color
 // because \n gets converted to \0 and
 
 size_t trim_newline(char *str) {
+    uint8_t tell[]                = { 0, 1, 2, 3, 4 ,5 ,6, 7 };
+    printf("tell = %" PRIu8 "\n", tell[0] );
     printf("trim_newline: remove \'\\n\' and \n");
     printf("make sure string got \'\\0\' at end. \n");
     printf("Input string (str) : %s \n", str);
@@ -62,12 +64,12 @@ size_t trim_newline(char *str) {
 
 int main()
 {
-    uint8_t    teller[] = { 0, 1, 2, 3, 4 ,5 ,6, 7 };
-    char   color       [MAX_LEN] = "";  // color
+    uint8_t teller[]              = { 0, 1, 2, 3, 4 ,5 ,6, 7 };
+    char    color       [MAX_LEN] = "";  // color
     //char   pluralNoun  [MAX_LEN] = "";
     //char   celebrity   [MAX_LEN] = "";
-    size_t len                   = 0;       // length after trim
-    char   *s_fgets              = nullptr; // addr of str
+    size_t  len                   = 0;       // length after trim
+    char    *s_fgets              = nullptr; // addr of str
 
     printf("teller = %" PRIu8 "\n", teller[0] );
     printf("Enter a color.....: ");

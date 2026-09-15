@@ -5,8 +5,9 @@ r
 display MAX_LEN
 display len
 display s_fgets
-display/8db &teller
+display/8xb &teller
 display/8db &color
+n
 n
 
 #display l
