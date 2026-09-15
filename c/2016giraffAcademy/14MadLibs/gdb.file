@@ -3,13 +3,12 @@ b main
 b trim_newline
 r
 display MAX_LEN
-display s_trim
+display len
 display s_fgets
+display/8db &teller
 display/8db &color
 n
 
-
-#display len
-#display len2
+#display l
 #display str
 #display/8xb str

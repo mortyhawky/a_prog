@@ -36,13 +36,13 @@ display/8db &color
 */
 
 // char* fgets( char* str, int count, FILE* stream );
-//#include <stdint.h>     // int16_t
-//#include <inttypes.h>   // PRId16
+#include <stdint.h>     // int16_t
+#include <inttypes.h>   // PRId16
 #include <stdio.h>      // printf
 #include <stdlib.h>     // EXIT_SUCCESS
 #include <string.h>     // strlen()
 
-#define MAX_LEN 8
+#define MAX_LEN 7
 // This give us effectivly MAX_LEN - 2 chars input
 // because \n gets converted to \0 and
 
@@ -51,33 +51,35 @@ size_t trim_newline(char *str) {
     printf("make sure string got \'\\0\' at end. \n");
     printf("Input string (str) : %s \n", str);
     size_t l = strlen(str);
-    printf("len = %zu \n", len);
+    printf("l before = %zu \n", l);
     str[l-1] = '\0';
 
     l = strlen(str);
-    printf("l = %zu \n", l);
+    printf("l after = %zu \n", l);
 
     return l;
 }
 
 int main()
 {
+    uint8_t    teller[] = { 0, 1, 2, 3, 4 ,5 ,6, 7 };
     char   color       [MAX_LEN] = "";  // color
     //char   pluralNoun  [MAX_LEN] = "";
     //char   celebrity   [MAX_LEN] = "";
-    size_t    len                = 0;       // length after trim
+    size_t len                   = 0;       // length after trim
     char   *s_fgets              = nullptr; // addr of str
 
+    printf("teller = %" PRIu8 "\n", teller[0] );
     printf("Enter a color.....: ");
     s_fgets = fgets(color, MAX_LEN, stdin);
     if ( !s_fgets ) {
         return EXIT_FAILURE;
     }
-    printf("status = %p\n", s_fgets);   // addr of string
-    len = trim_newline(color);   // status trim_newline 0=OK
-    printf("trim_status = %d \n" , s_trim );
+    printf("s_fgets = %p\n", s_fgets);  // addr of string
+    len = trim_newline(color);          // len of string
+    printf("len after trim: %zu \n ", len );
+    printf("color = %s \n ", color); 
 
-    
     return EXIT_SUCCESS;
 }
 
