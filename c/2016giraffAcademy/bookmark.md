@@ -1,12 +1,9 @@
-## Bookmark
+# Bookmark
 
-### C Programming Tutorial for Beginners
+## C Programming Tutorial for Beginners
 
-#### freeCodeCamp.org
+### freeCodeCamp.org
 
-##### giraffeAcademy
+#### giraffeAcademy
 
-2026-08-17 18:00 Mon
-```link
-https://www.youtube.com/watch?v=KJgsSFOSQv0&t=412s
-```
+[14MadLibs](https://www.giraffeacademy.com/programming-languages/c/building-a-mad-libs-game/)
