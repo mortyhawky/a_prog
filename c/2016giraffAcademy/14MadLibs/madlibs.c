@@ -12,6 +12,17 @@ clang     madlibs.c -o a.out             \
           -Wall -Wextra -Werror -Wpedantic          \
           -fsanitize=address,undefined              \
           && ./a.out ; printf "Exit code = $?\n"
+
+
+gdb       a.out
+b main
+r
+display/8db &color
+display/8db &pluralNoun 
+display/8db &celebrity
+display len
+n
+
 */
 
 // char* fgets( char* str, int count, FILE* stream );
@@ -21,7 +32,9 @@ clang     madlibs.c -o a.out             \
 #include <stdlib.h>     // EXIT_SUCCESS
 #include <string.h>     // strlen()
 
-#define MAX_LEN 50
+#define MAX_LEN 8
+// This give us effectivly MAX_LEN - 2 chars input
+// because \n gets converted to \0 and
 
 int main()
 {
@@ -30,17 +43,25 @@ int main()
     char celebrity   [MAX_LEN] = "";
     size_t len                 =  0;
 
-    // color 
     printf("Enter a color.....: ");
-    fgets(color     , MAX_LEN, stdin);
+    if (  !(fgets(color, MAX_LEN, stdin) )  ) {
+        return EXIT_FAILURE;
+    }
     len = strlen(color);
-    color     [ len - 1 ] = '\0';
+    len -= 1;
+    //if ( len > MAX_LEN ) {
+    //    len = MAX_LEN;
+    //}
+    color [ len ] = '\0';         // replace the newline
+    color [ MAX_LEN - 1 ] = '\0'; // always '\0' at MAX_LEN
     
-    // pluralNoun
     printf("Enter plural noun.: ");
-    fgets(pluralNoun, MAX_LEN, stdin);
+    if ( !fgets(pluralNoun, MAX_LEN, stdin) ) {
+        return EXIT_FAILURE;
+    }
     len = strlen(pluralNoun);
-    pluralNoun[ len - 1 ] = '\0';
+    len -= 1;
+    pluralNoun[ len ] = '\0';
 
     // celebrity
     printf("Enter celebrity...: ");
