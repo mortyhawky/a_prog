@@ -42,98 +42,65 @@ display/8db &color
 #include <stdlib.h>     // EXIT_SUCCESS
 #include <string.h>     // strlen()
 
-#define MAX_LEN 7
+#define MAX_LEN 16
 // This give us effectivly MAX_LEN - 2 chars input
 // because \n gets converted to \0 in trim_new_line
 //  and we always need a '\0' at the end.
 
 size_t trim_newline(char *str) {
-    //uint8_t tell[]                = { 0, 1, 2, 3, 4 ,5 ,6, 7 };
-    //printf("tell = %" PRIu8 "\n", tell[0] );
-    printf("trim_newline: remove \'\\n\' and \n");
-    printf("make sure string got \'\\0\' at end. \n");
-    printf("Input string (str) : %s \n", str);
+    printf("trim_newline: remove \'\\n\' and make sure \n");
+    printf("              string end with \'\\0\'    \n");
+    printf("              Input string (str) : %s \n", str);
     size_t l = strlen(str);
-    printf("l before = %zu \n", l);
-    str[l-1] = '\0';
+    printf("              l before = %zu \n", l);
+    str[l-1] = '\0';      // remove '\n'
 
     l = strlen(str);
-    printf("l after = %zu \n", l);
+    printf("              l after  = %zu \n", l);
 
     return l;
 }
 
 void dump_mem(char *mem, size_t bytes) {
-    printf("bytes = %zu ", bytes);
-    printf("@ %p:", mem);
+    printf("dump_mem: *****************  DUMP MEMORY  ******************\n");
+    printf("dump_mem: %zu bytes @ %p", bytes, mem);
     size_t i = 0;
-    for (i = 0; i < 8; i++) {
+    for (i = 0; i < bytes; i++) {
         if ( mem[i] == 0 ) {
-            printf(" %02" PRIu8 "   ", 00 );
+            printf("   00");
             continue;
         }
-        printf(" %02" PRIu8 "   ", mem[i] );
+        printf("   %02" PRIu8 , mem[i] );
     }
-    printf("\n\n");
+    puts("");
+    printf("dump_mem: ------------------------------------------------\n\n");
 }
 
 int main()
 {
-    //uint8_t teller[]              = { 0, 1, 2, 3, 4 ,5 ,6, 7 };
     char    color       [MAX_LEN] = "";  // color
-    //char   pluralNoun  [MAX_LEN] = "";
-    //char   celebrity   [MAX_LEN] = "";
     size_t  len                   = 0;       // length after trim
     char    *s_fgets              = nullptr; // addr of str
 
-    //dump_mem(teller, 8);
+    dump_mem( color , 8 );
+
+    //dump_mem(teller, 7);
 
     //printf("teller = %" PRIu8 "\n", teller[0] );
-    printf("Enter a color.....: ");
+    printf("main: Enter a color.....: ");
     s_fgets = fgets(color, MAX_LEN, stdin);
     if ( !s_fgets ) {
         return EXIT_FAILURE;
     }
     
-
-    printf("s_fgets = %p\n", s_fgets);  // addr of string
+    dump_mem( color , 8 );
+ 
+    printf("main: s_fgets = %p\n", s_fgets);  // addr of string
     len = trim_newline(color);          // len of string
-    printf("len after trim: %zu \n ", len );
-    printf("color = %s \n ", color); 
+    printf("main: len after trim: %zu \n", len );
+    printf("main: color = %s \n ", color); 
 
-    
-    dump_mem( color , 8);
+    dump_mem( color , 8 );
 
     return EXIT_SUCCESS;
 }
-
-
-
-////     if (  !(fgets(color, MAX_LEN, stdin) )  ) {
-////         return EXIT_FAILURE;
-////     }
-////     len = strlen(color);
-////     len -= 1;
-////     color [ len ] = '\0';         // replace the newline
-////     //color [ MAX_LEN - 1 ] = '\0'; // always '\0' at MAX_LEN
-////     
-//// //    printf("Enter plural noun.: ");
-//// //    if ( !fgets(pluralNoun, MAX_LEN, stdin) ) {
-//// //        return EXIT_FAILURE;
-//// //    }
-//// //    len = strlen(pluralNoun);
-//// //    len -= 1;
-//// //    pluralNoun[ len ] = '\0';
-//// //
-//// //    // celebrity
-//// //    printf("Enter celebrity...: ");
-//// //    fgets(celebrity , MAX_LEN, stdin);
-//// //    len = strlen(celebrity);
-//// //    celebrity [ len - 1 ] = '\0';
-//// 
-////     printf("Roses are %s \n", color      );
-////     printf("%s are %s    \n", pluralNoun, color );
-////     printf("I love %s    \n", celebrity  );
-//// 
-////     return EXIT_SUCCESS;
-//// }
