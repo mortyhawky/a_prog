@@ -20,8 +20,8 @@ clang     double.c -o a.out                         \
 
 int main()
 {
-    double num1 = 1;
-    double num2 = 2;
+    double num1 = 0.0;
+    double num2 = 0.0;
     printf("Enter first number..: ");
     scanf("%lf", &num1);                // double %lf, float %f
     printf("Enter second number.: ");
