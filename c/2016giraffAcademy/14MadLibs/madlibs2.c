@@ -42,7 +42,7 @@ display/8db &color
 #include <stdlib.h>     // EXIT_SUCCESS
 #include <string.h>     // strlen()
 
-#define MAX_LEN 16
+#define MAX_LEN 8
 // This give us effectivly MAX_LEN - 2 chars input
 // because \n gets converted to \0 in trim_new_line
 //  and we always need a '\0' at the end.
@@ -62,15 +62,16 @@ size_t trim_newline(char *str) {
 }
 
 void dump_mem(char *mem, size_t bytes) {
+    bytes += 1;
     printf("dump_mem: *****************  DUMP MEMORY  ******************\n");
-    printf("dump_mem: %zu bytes @ %p", bytes, mem);
+    printf("dump_mem: %zu bytes @ %p\n", bytes, mem);
     size_t i = 0;
-    for (i = 0; i < bytes; i++) {
-        if ( mem[i] == 0 ) {
-            printf("   00");
+    for (i = 0; i <= bytes; i++) {
+        if ( mem[i] == 10 ) {
+            printf("  \'\\n\'");
             continue;
         }
-        printf("   %02" PRIu8 , mem[i] );
+        printf("  0x%02" PRIx8 , mem[i] );
     }
     puts("");
     printf("dump_mem: ------------------------------------------------\n\n");
@@ -78,11 +79,11 @@ void dump_mem(char *mem, size_t bytes) {
 
 int main()
 {
-    char    color       [MAX_LEN] = "";  // color
+    char    color       [MAX_LEN + 2] = "";  // color
     size_t  len                   = 0;       // length after trim
     char    *s_fgets              = nullptr; // addr of str
 
-    dump_mem( color , 8 );
+    dump_mem( color , MAX_LEN );
 
     //dump_mem(teller, 7);
 
@@ -93,14 +94,14 @@ int main()
         return EXIT_FAILURE;
     }
     
-    dump_mem( color , 8 );
+    dump_mem( color , MAX_LEN );
  
     printf("main: s_fgets = %p\n", s_fgets);  // addr of string
     len = trim_newline(color);          // len of string
     printf("main: len after trim: %zu \n", len );
     printf("main: color = %s \n ", color); 
 
-    dump_mem( color , 8 );
+    dump_mem( color , MAX_LEN );
 
     return EXIT_SUCCESS;
 }
