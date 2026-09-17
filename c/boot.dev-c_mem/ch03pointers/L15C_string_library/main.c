@@ -1,5 +1,6 @@
 /*
 c /a/prog/c/boot.dev-c_mem/ch03pointers/L15C_string_library
+gitall ; tree
 
 make && tree
 ./exercise && echo "Exit code = $?"
