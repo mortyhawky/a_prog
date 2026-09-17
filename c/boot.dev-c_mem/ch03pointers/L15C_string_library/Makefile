@@ -1,16 +1,18 @@
 CC = gcc
-CFLAGS = -std=c23 -Wall -Wextra -Werror -Wpedantic -g3 -O0
+CFLAGS = -std=c23 -Wall -Wextra -Werror -Wpedantic\
+		 -g3 -O0\
+		 -fsanitize=addree,undefined
 
-TARGET = exercise
-OBJ = main.o exercise.o
+TARGET = println
+OBJ = main.o println.o
 
 $(TARGET): $(OBJ)
 	$(CC) $(CFLAGS) -o $@ $^
 
-main.o: main.c exercise.h
+main.o: main.c println.h
 	$(CC) $(CFLAGS) -c $<
 
-exercise.o: exercise.c exercise.h
+println.o: println.c println.h
 	$(CC) $(CFLAGS) -c $<
 
 clean:
@@ -21,7 +23,7 @@ clean:
 # Important: the indentation before $(CC) and rm must be a tab, 
 # not spaces. Make requires that for recipe lines.
 #
-# -- Disable expandtabs for "make"
+# -- Disable expandtab for "make"
 #  vim.api.nvim_create_autocmd("FileType", {
 #      pattern = "make",
 #      callback = function()

@@ -1,7 +1,7 @@
 #include <stdio.h>
-#include "exercise.h"
+#include "println.h"
 
-// Impementation
+// Implementation:
 void println(const char *str) {
     printf("%s\n", str);
 }
