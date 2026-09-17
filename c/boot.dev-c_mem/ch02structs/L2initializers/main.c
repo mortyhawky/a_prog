@@ -2,9 +2,9 @@
 c /a/prog/c/boot.dev-c_mem/ch02structs/L2initializers/
 
 make
-./initializers && echo "Exit code = $?"
+./coord && echo "Exit code = $?"
 
-gdb structs
+gdb coord
 
 
 make clean
