@@ -1,6 +1,6 @@
 /*
 
-c /a/prog/c/boot.dev-c_mem/ch03pointers/L15C_string_library
+c /a/prog/c/boot.dev-c_mem/ch03pointers/L17mutual_structs/
 
 make
 ./println && echo "Exit code = $?"

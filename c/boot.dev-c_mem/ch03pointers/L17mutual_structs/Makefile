@@ -3,16 +3,16 @@ CFLAGS = -std=c23 -Wall -Wextra -Werror -Wpedantic\
 		 -g3 -O0\
 		 -fsanitize=address,undefined
 
-TARGET = println
+TARGET = exercise17
 OBJ = main.o println.o
 
 $(TARGET): $(OBJ)
 	$(CC) $(CFLAGS) -o $@ $^
 
-main.o: main.c println.h
+main.o: main.c exercise17.h
 	$(CC) $(CFLAGS) -c $<
 
-println.o: println.c println.h
+println.o: exercise.c exercise.h
 	$(CC) $(CFLAGS) -c $<
 
 clean:
