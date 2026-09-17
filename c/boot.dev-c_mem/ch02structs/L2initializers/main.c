@@ -3,8 +3,10 @@ c /a/prog/c/boot.dev-c_mem/ch02structs/L2initializers/
 
 make
 ./coord && echo "Exit code = $?"
-
+clear && make && ./coord
 gdb coord
+b main
+b new_coord
 
 
 make clean
@@ -26,7 +28,7 @@ int main(void) {
 
 
 
-    struct Coordinate co2 = new_coord(4, 2, 0);
+    struct Coordinate co2 = new_coord(44, 55, 66);
     printf("in main: co2.x_coord = %d\n", co2.x_coord);
     printf("in main: co2.y_coord = %d\n", co2.y_coord);
     printf("in main: co2.z_coord = %d\n", co2.z_coord);
