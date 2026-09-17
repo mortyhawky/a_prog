@@ -25,18 +25,22 @@ make clean
 
 int main(void) {
 
-    println("Hello, world! ");
+    println("Hello, world!\n");
 
     employee_t emp = create_employee(2, "CEO Dax");
-    printf("emp.id = %d", emp.id);
-    
+    printf("emp.id        = %d\n",      emp.id);
+    printf("emp.name      = %s\n",    emp.name);
     department_t dept = create_department("C Suite");
-    printf("dept.name = %d", dept.name);
+    printf("dept.name     = %s\n\n", dept.name);
+    assign_employee(&emp, &dept);
     
-    
+    employee_t manager = create_employee(3, "Influencer Prime");
+    printf("manager.id    = %d\n",   manager.id);
+    printf("manager.name  = %s\n", manager.name);
+    dept = create_department("Marketing");
+    printf("dept.name     = %s\n\n",  dept.name);
+    //assign_manager(&dept, &manager);
 
-
-    //assign_employee(&emp, &dept);
 
 
     return EXIT_SUCCESS;
