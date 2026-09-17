@@ -1,4 +1,10 @@
 /*
+Define a new struct called Coordinate in coord.h. Remember, 
+.h files are for declarations of types and function prototypes. 
+The Coordinate struct should have three fields:
+    x: an integer
+    y: an integer
+    z: an integer
 
 c /a/prog/c/boot.dev-c_mem/ch02structs/L1structs/
 
@@ -9,7 +15,6 @@ gdb structs
 
 
 make clean
-
 */
 
 //                     values:  0                1
