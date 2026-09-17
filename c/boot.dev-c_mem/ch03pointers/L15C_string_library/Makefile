@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -std=c23 -Wall -Wextra -Werror -Wpedantic\
 		 -g3 -O0\
-		 -fsanitize=addree,undefined
+		 -fsanitize=address,undefined
 
 TARGET = println
 OBJ = main.o println.o
