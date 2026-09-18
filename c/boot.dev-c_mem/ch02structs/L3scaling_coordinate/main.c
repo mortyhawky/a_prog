@@ -1,5 +1,5 @@
 /*
-c /a/prog/c/boot.dev-c_mem/ch02structs/L2initializers/
+c /a/prog/c/boot.dev-c_mem/ch02structs/L3scaling_coordinate/
 
 make
 ./coord && echo "Exit code = $?"

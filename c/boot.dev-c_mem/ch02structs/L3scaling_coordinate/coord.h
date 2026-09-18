@@ -1,9 +1,14 @@
 #pragma once
 
+// definition of struct Coordinate
 struct Coordinate {
-    int x_coord;
-    int y_coord;
-    int z_coord;
+    int x_coo;
+    int y_coo;
+    int z_coo;
 };
 
-struct Coordinate new_coord(int x_new, int y_new, int z_new);
+// function-prototype: create new coordinate
+struct Coordinate new_coord(int new_x, int new_x, int new_z);
+
+// function-prototype: scale current coordinate
+struct Coordinate scale_coordinate(struct Coordiante s_coor, int scale);
