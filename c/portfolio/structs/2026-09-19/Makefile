@@ -12,7 +12,7 @@ $(TARGET): $(OBJ)
 main.o: main.c struct.h
 	$(CC) $(CFLAGS) -c $<
 
-struct.o: coord.c coord.h
+struct.o: struct.c struct.h
 	$(CC) $(CFLAGS) -c $<
 
 clean:
