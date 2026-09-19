@@ -1,5 +1,5 @@
 /*
-c /a/prog/c/boot.dev-c_mem/ch02structs/L3scaling_coordinate/
+c /a/prog/c/portfolio/structs/2026-09-19/
 
 // Compile project and run:
 clear && make clean && make && ./coord
@@ -11,10 +11,9 @@ clear && make clean && make && gdb coord
 make clean
 */
 
-//                     values:  0                1
-#include <stdlib.h> // for EXIT_SUCCESS and EXIT_FAILURE
+#include <stdlib.h>
 #include <stdio.h>
-#include "coord.h"
+#include "struct.h"
 
 int main(void) {
     puts("");
