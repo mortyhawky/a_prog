@@ -43,11 +43,12 @@ int main(void) {
 
     //5 reusing player4
     //player4.name = "Eva";    // NO!
-    player4.number = 5;
-    char n[] = "Eva";
+    player4.number = 4;
+    char new_name[] = "Eva";
+    strcpy(player4.name, new_name);
     size_t i = 0; 
     for (i = 0; i < strlen(n); i++) {
-        player4.name[i] = n[i];
+        player4.name[i] = new_name[i];
     }
     player4.name[i] = '\0'; // set the null terminator.
     player4.score = 56;
