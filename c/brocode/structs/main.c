@@ -1,14 +1,14 @@
 /*
 c /a/prog/c/brocode/structs/
 
-// Compile project and run:
+// Project: Compile and Run:
 clear && make clean && make && ./structs ; printf "Exit code = $?\n"
 
-// Compile and debug project
+// Project: Compile and Debug:
 clear && make clean && make && gdb structs
 
-// Clean project:
-make clean
+// Project: CLean and Git:
+make clean && gitall
 */
 
 #include "structs.h"
