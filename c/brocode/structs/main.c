@@ -19,11 +19,47 @@ make clean && gitall || ll
 int main(void) {
     printf("/a/prog/c/brocode/structs/main.c\n");
 
-    struct Player p1      = { .name = "Bro",   .score = 4 };
-    print_player(p1);
+    //1
+    struct Player player1 = { .number = 1, .name = "Bro",   .score = 11 };
+    print_player(player1);
 
-    struct Player player2 = { .name = "Morty", .score = 3 };
+    //2
+    struct Player player2 = { .number = 2, .name = "Morty", .score = 22 };
     print_player(player2);
+
+    //3
+    struct Player player3;
+    player3.number = 3;
+    strcpy(player3.name, "Monica");
+    player3.score = 33;;
+    print_player(player3);
+
+    //4
+    struct Player player4;
+    player4.number = 4;
+    strcpy(player4.name, "Caroline");
+    player4.score = 44;
+    print_player(player4);
+
+    //5 reusing player4
+    //player4.name = "Eva";    // NO!
+    player4.number = 5;
+    char n[] = "Eva";
+    size_t i = 0; 
+    for (i = 0; i < strlen(n); i++) {
+        player4.name[i] = n[i];
+    }
+    player4.name[i] = '\0'; // set the null terminator.
+    player4.score = 56;
+    print_player(player4);
+
+    // Designated initializers:
+    struct Player player6 = {
+        .number = 6,
+        .name   = { "Felicia" },
+        .score  = 66
+    };
+    print_player(player6);
 
     return EXIT_SUCCESS;
 }
