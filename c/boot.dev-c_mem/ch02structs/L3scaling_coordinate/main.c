@@ -25,7 +25,8 @@ int main(void) {
     s_newCoo.y_coo = 2;
     s_newCoo.z_coo = 3;
 
-    printf("*1 --> in main: s_newCoo.x_coo = %d \n", s_newCoo.x_coo );
+    printf("*1 --> in main: s_newCoo.\n");
+    printf("                         x_coo \n", s_newCoo.x_coo);
 
 
     return EXIT_SUCCESS;

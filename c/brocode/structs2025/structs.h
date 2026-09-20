@@ -1,15 +1,24 @@
 #pragma once
-#include <stdlib.h>
+//#include <stdlib.h>
 
-// blueprint
+#define MAXLEN 99
+// "struct Student" is the type name.
+struct Student {
+    char  name[MAXLEN];
+    int   age;
+    float gpa;  // Grade Point Average
+    bool  isFullTime;
+};
+
 typedef struct {
-    char  navn[80];
+    char  navn[MAXLEN];
     int   alder;
     float snitt;
     bool  fulltid;
-} Elev_t;
+} Elev_t;   // Elev_t is the type name.
 
-
+void display_student(struct Student student);
+void vis_elev(Elev_t elev);
 
 
 

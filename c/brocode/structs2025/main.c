@@ -15,15 +15,7 @@ make clean && gitall || ll
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-//#include <stdbool.h>
 
-// "struct Student" is the type name.
-struct Student {
-    char  name[50];
-    int   age;
-    float gpa;
-    bool  isFullTime;
-};
 
 int main(void) {
     puts("");
@@ -31,18 +23,65 @@ int main(void) {
     printf("\"Structs in C are easy!\"\n");
     puts("");
 
-    Elev_t morty = {
-        .navn     = { "Morty" },
-        .alder    = 55,
-        .snitt    = 3.14,
-        .fulltid  = 1
+
+    #define AD 2026
+    // 1
+    struct Student elin = {
+        .name       = "Elin Oppegaard",
+        .age        = (AD - 1970),
+        .gpa        = 4.01f,
+        .isFullTime = true
     };
 
-    printf("Type     Variable-name     value\n");
-    printf("Elev_t   morty.navn:       %s    \n",    morty.navn     );
-    printf("Elev_t   morty.alder:      %d    \n",    morty.alder    );
-    printf("Elev_t   morty.snitt:      %0.2f \n",    morty.snitt    );
-    printf("Elev_t   morty.fulltid:    %b    \n",    morty.fulltid  );
+    display_student(elin);
 
+
+    // 2
+    #define ja true
+    #define nei false
+    Elev_t morty = {
+        .navn     = "Morty H",
+        .alder    = AD - 1971,
+        .snitt    = 3.14f,
+        .fulltid  = nei
+    };
+
+    vis_elev(morty);
+
+    // 3
+    struct Student student1 = {
+        .name       = "Spongebob",
+        .age        = AD - 1996,
+        .gpa        = 2.5,
+        .isFullTime = true
+    };
+
+    struct Student student2 = {"Patrick", 36, 1.0, false};
+    display_student(student1);
+    display_student(student2);
+
+    printf("in main:\n");
+    printf("%s   \n", student1.name       );
+    printf("%d   \n", student1.age        );
+    printf("%0.2f\n", student1.gpa        );
+    printf("%s   \n", (student1.isFullTime) ? "Full time" : "Part time" );
+
+    struct Student student3 = {"Squidward", 48, 3.14, false};
+    display_student(student3);
+
+    #define EMPTY 0
+    struct Student student4 = { EMPTY };
+    display_student(student4);
+
+    strcpy(student4.name, "Sandy");
+    display_student(student4);
+    student4.age = 27;
+    display_student(student4);
+    student4.gpa = 4.0f;
+    display_student(student4);
+    student4.isFullTime = true;
+    display_student(student4);
+
+    puts("");
     return EXIT_SUCCESS;
 }
