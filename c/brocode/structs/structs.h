@@ -7,4 +7,4 @@ struct Player {
     int    score;
 };
 
-void  print_player(struct Player p);
+void  print_player(struct Player player);

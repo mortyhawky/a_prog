@@ -19,8 +19,11 @@ make clean
 int main(void) {
     printf("/a/prog/c/brocode/structs/main.c\n");
 
-    struct Player p1 = { .name = "Bro",.score = 4};
+    struct Player p1      = { .name = "Bro",   .score = 4 };
     print_player(p1);
+
+    struct Player player2 = { .name = "Morty", .score = 3 };
+    print_player(player2);
 
     return EXIT_SUCCESS;
 }
