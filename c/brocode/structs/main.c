@@ -8,7 +8,7 @@ clear && make clean && make && ./structs ; printf "Exit code = $?\n"
 clear && make clean && make && gdb structs
 
 // Project: CLean and Git:
-make clean && gitall
+make clean && gitall || ll
 */
 
 #include "structs.h"
