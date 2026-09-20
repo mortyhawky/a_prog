@@ -19,5 +19,8 @@ make clean
 int main(void) {
     printf("/a/prog/c/brocode/structs/main.c\n");
 
+    struct Player p1 = { .name = "Bro",.score = 4};
+    print_player(p1);
+
     return EXIT_SUCCESS;
 }

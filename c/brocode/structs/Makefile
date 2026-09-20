@@ -3,16 +3,16 @@ CFLAGS = -std=c23 -Wall -Wextra -Werror -Wpedantic\
 		 -g3 -O0\
 		 -fsanitize=address,undefined
 
-TARGET = struct
-OBJ = main.o struct.o
+TARGET = structs
+OBJ = main.o structs.o
 
 $(TARGET): $(OBJ)
 	$(CC) $(CFLAGS) -o $@ $^
 
-main.o: main.c struct.h
+main.o: main.c structs.h
 	$(CC) $(CFLAGS) -c $<
 
-struct.o: struct.c struct.h
+structs.o: structs.c structs.h
 	$(CC) $(CFLAGS) -c $<
 
 clean:
