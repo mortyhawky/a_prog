@@ -16,6 +16,7 @@ make clean
 #include <stdlib.h>
 #include <string.h>
 
+
 int main(void) {
     puts("");
     printf("*1 --> in main: \n");
@@ -129,53 +130,49 @@ int main(void) {
         printf("  Grade[%zu] = %d\n", idx, morty.grades[idx]);
     }
 
+
+
+
+    printf("\n--------- typedef: ----------\n");
+
+    student_t bob = { 
+        .name        = nullptr,
+        .id          = nullptr,
+        .grades      = nullptr,
+        .grade_count = 0,
+        .age         = 0,
+    };
+
+    bob.name         = "Bob";
+    bob.id           = "7654321";
+    int grds[]       = { 7, 9, 13 };
+    bob.grades       = grds;
+    bob.grade_count  = sizeof grds / sizeof grds[0];
+    bob.age          = 33;
+
+    printf("bob.name        = %s\n", bob.name);
+    printf("bob.id          = %s\n", bob.id);
+    printf("bob.grades[0]   = %d\n", bob.grades[0]);
+    printf("bob.grades[1]   = %d\n", bob.grades[1]);
+    printf("bob.grades[2]   = %d\n", bob.grades[2]);
+    //printf("bob.grades[3]   = %d\n", bob.grades[3]);
+    printf("bob.grade_count = %zu\n", bob.grade_count);
+    printf("bob.age         = %d\n", bob.age);
+    puts("");
+
+    print_student(bob);
+
+    puts("");
+
+    student_t elin = {
+        .name   = "Elin O.",
+        .id     = "1970",
+        .grades = 
+    };
+
+    printf("elin.name        = %s\n", elin.name);
+    
+
     return EXIT_SUCCESS;
 }
 
-//    printf(" Grades[0]...: %d\n", morty.grades[0]);
-//    printf(" Grades[1]...: %d\n", morty.grades[1]);
-//    puts("");
-//
-//    morty.name  = "Morty Hawky";
-//    morty.id    = "007B";
-//    morty.grades[1] = 0;
-//    printf(" Name........: %s\n", morty.name);
-//    printf(" Id..........: %s\n", morty.id);
-//    printf(" Age.........: %d\n", morty.age);
-//    printf(" Grades[0]...: %d\n", morty.grades[0]);
-//    printf(" Grades[1]...: %d\n", morty.grades[1]);
-//    puts("");
-//
-//    // 1. const char *ptr;
-//    //    ptr is a pointer to const char.
-//    //    ptr can be changed, but the object pointed to can't.
-//    //
-//    // 2. char *const ptr;
-//    //    ptr is a const pointer to char.
-//    //    ptr cannot be changed, but the object pointed to can.
-//    //
-//    // 3. const char *const ptr;
-//    //    ptr is a const pointer to const char.
-//    //    ptr cannot be changed, and the object pointed to can't.
-//    // 
-//    // a) May the pointer itself change?
-//    // b) May the object it points to change through this pointer?
-//    //
-//    // using 1. ptr can be changed, but the object pointed to can't
-//    // 
-//    // char * doesn't mean "the object is writable." It means
-//    // "this pointer type permits modification through this pointer."
-//    // Whether the actual object is writable is a separate question.
-//    //
-//    printf("Experimantal part:\n");
-//
-//    const char *ptr_Stud2_name = morty.name = "mh";
-//    //ptr_Stud2_name[0] = 'M';    // constraint violation: ptr points to const char
-//    printf(" Name..: %s\n", ptr_Stud2_name);
-//
-//    ptr_Stud2_name = "Morty";
-//    printf(" Name..: %s\n", ptr_Stud2_name);
-//
-//    puts("");
-//
-//
