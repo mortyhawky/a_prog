@@ -20,14 +20,5 @@ int main(void) {
     puts("");
     printf("*1 --> in main: \n");
 
-    struct Coordinate s_newCoo;
-    s_newCoo.x_coo = 1;
-    s_newCoo.y_coo = 2;
-    s_newCoo.z_coo = 3;
-
-    printf("*1 --> in main: s_newCoo.\n");
-    printf("                         x_coo \n", s_newCoo.x_coo);
-
-
     return EXIT_SUCCESS;
 }

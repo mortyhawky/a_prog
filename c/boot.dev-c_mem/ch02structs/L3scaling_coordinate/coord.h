@@ -13,6 +13,7 @@ struct Coordinate new_coord(int new_x, int new_y, int new_z);
 // prototype == declaration == forward declaration
 struct Coordinate scale_coordinate(struct Coordinate s_coor, int scale);
 
+void display_coordinate(struct Coordinate c);
 /*
 For functions, "prototype" and "declaration" really are (almost) 
 the same thing:

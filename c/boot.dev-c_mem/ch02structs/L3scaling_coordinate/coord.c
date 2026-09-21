@@ -24,3 +24,13 @@ struct Coordinate scale_coordinate(struct Coordinate coord, int factor) {
 
     return scaled_coord;
 }
+
+
+void display_coordinate(struct Coordinate c) {
+    printf("    in display_coordinate: \n");
+    printf("        struct Coordinate c. \n" );
+    printf("                            x_coo = %d \n", c.x_coo );
+    printf("                            y_coo = %d \n", c.y_coo );
+    printf("                            z_coo = %d \n", c.z_coo );
+    puts("");
+}
