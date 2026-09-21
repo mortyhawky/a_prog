@@ -1,24 +1,25 @@
-/*
+/* cd into working directory
 c /a/prog/c/boot.dev-c_mem/ch02structs/L3scaling_coordinate/
 
-// Project: Compile & Run:
+ * Project; Compile & Run:
 clear && make && ./coord
 
-// Project: Compile & Debug:
+ * Project; Compile & Debug:
 clear && make clean && make && gdb coord
 
-// Project: Clean
+ * Project; Clean:
 make clean && ll
 */
 
-//                     values:  0                1
-#include <stdlib.h> // for EXIT_SUCCESS and EXIT_FAILURE
+#include <stdlib.h>
 #include <stdio.h>
 #include "coord.h"
 
 int main(void) {
+    puts("in main:");
+    puts("www.boot.dev: Learn Memory Management in C by TJ DeVries (\"teej\")");
+    puts("Chapter02 Structs Lesson03 Scaling Coordinates");
     puts("");
-    printf("*1 --> in main: \n");
 
     return EXIT_SUCCESS;
 }

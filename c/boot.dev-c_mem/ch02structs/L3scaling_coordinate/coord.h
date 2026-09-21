@@ -1,37 +1,28 @@
 #pragma once
 
-// definition of the structure; Coordinate
+// Definition of the struct Coordinate type.
+//
+// Coordinate            -> the structure tag
+// struct Coordinate     -> the structure type
+// struct Coordinate { ... }; -> defines the structure type
+// struct Coordinate point;  -> declares an object of that type
+
 struct Coordinate {
-    int x_coo;  // ends with semicolon (;)
-    int y_coo;  // declaring members of structure, ends with ;
-    int z_coo;  // all ends with ;
-};
+    int x_coo;  // declaration of a structure member; ends with ;
+    int y_coo;  // declaration of a structure member; ends with ;
+    int z_coo;  // declaration of a structure member; ends with ;
+};              // structure definition ends with ;
 
-// prototype == declaration == forward declaration
-struct Coordinate new_coord(int new_x, int new_y, int new_z);
 
-// prototype == declaration == forward declaration
-struct Coordinate scale_coordinate(struct Coordinate s_coor, int scale);
+// Function prototype == function declaration.
+//
+// Because these declarations appear before the function definitions,
+// they can also be described as forward declarations.
 
-void display_coordinate(struct Coordinate c);
-/*
-For functions, "prototype" and "declaration" really are (almost) 
-the same thing:
+struct Coordinate  new_coord          (int new_x, int new_y, int new_z);
 
-```c
-int add(int a, int b);  // prototype == declaration == forward declaration
-```
+struct Coordinate  scale_coordinate   (struct Coordinate s_coor, int scale);
 
-This line has no body, so it's a pure declaration. Since it appears 
-before the definition (which has the body), it is inherently a 
-forward declaration — that's basically the whole point of prototypes 
-in C. You declare the function's signature early (often in a header) 
-so callers can use it before the compiler has seen the actual 
-definition later in the file 
-(or in another translation unit entirely). 
-So yes — every function prototype is a forward declaration, 
-they're not "almost" the same, they're just two names for the same 
-concept, emphasizing different things: "prototype" emphasizes what 
-it specifies (return type + parameter types), "declaration" 
-emphasizes what it does (tells the compiler this identifier exists).
-*/
+
+//return type       function name       parameters
+void               display_coordinate (struct Coordinate c);
