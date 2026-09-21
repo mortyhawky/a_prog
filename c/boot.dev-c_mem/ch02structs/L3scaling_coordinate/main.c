@@ -16,10 +16,20 @@ make clean && ll
 #include "coord.h"
 
 int main(void) {
-    puts("in main:");
     puts("www.boot.dev: Learn Memory Management in C by TJ DeVries (\"teej\")");
     puts("Chapter02 Structs Lesson03 Scaling Coordinates");
     puts("");
+    puts("in main:");
+    puts("");
+
+    struct Coordinate c1 = coor_new(1, 2, 3);
+    coor_show(c1);
+
+    c1 = coor_scale(c1, 3);
+    coor_show(c1);
+
+    c1 = coor_scale(c1, 7);
+    coor_show(c1);
 
     return EXIT_SUCCESS;
 }

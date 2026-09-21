@@ -1,0 +1,15 @@
+#vim : set filetype=conf :
+b main
+b dump_mem
+b trim_newline
+r
+display MAX_LEN
+display len
+display s_fgets
+display/8db &color
+n
+n
+
+#display l
+#display str
+#display/8xb str
