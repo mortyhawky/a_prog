@@ -1,52 +1,23 @@
 #include <stdio.h>
-#include "coord.h"
+#include "typedef.h"
 
-struct Coordinate coor_new  (int new_x, int new_y, int new_z) {
-    printf(
-    "    in coor_new:                                       \n"
-    "        int new_x = %d, int new_y = %d, int new_z = %d \n",
-                       new_x,          new_y,          new_z
-          );
-    puts("");
-    // nc is a temporary struct object in this function, 
-    // that we returns to the caller.
-    struct Coordinate nc = {
-        .x_coo = new_x,
-        .y_coo = new_y,
-        .z_coo = new_z
-    };
+coordinate_t new_coord(int x, int y, int z) {
+    coordinate_t coord = { .x = x, .y = y, .z = z };
 
-    return nc;          // nc = New Coordinates
+    return coord;
 }
 
+coordinate_t scale_coordinate(coordinate_t coord, int factor) {
+    coord.x *= factor;
+    coord.y *= factor;
+    coord.z *= factor;
 
-void              coor_show (struct Coordinate cs) {
-    printf(
-    "    in coor_show:                  \n"
-    "        struct Coordinate c.       \n"
-    "                       x_coo = %d  \n" 
-    "                       y_coo = %d  \n" 
-    "                       z_coo = %d  \n",
-                                    cs.x_coo,
-                                    cs.y_coo,
-                                    cs.z_coo
-    );
-    puts("");
+    return coord;
 }
 
-
-
-struct Coordinate coor_scale(struct Coordinate csc, int scale_factor) {
-    printf("    in coor_scale:                  \n");
-    printf("        scaling by: %d \n", scale_factor);
-    printf("            c.x_coo = %d \n", csc.x_coo);
-    printf("            c.y_coo = %d \n", csc.y_coo);
-    printf("            c.z_coo = %d \n", csc.z_coo);
+void show_coord(coordinate_t c) {
+    printf("%d \n", c.x);
+    printf("%d \n", c.y);
+    printf("%d \n", c.z);
     puts("");
-
-    csc.x_coo *= scale_factor;    // scale x by factor
-    csc.y_coo *= scale_factor;    
-    csc.z_coo *= scale_factor;    
-
-    return csc;
 }
