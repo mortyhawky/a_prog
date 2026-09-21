@@ -1,14 +1,14 @@
 /*
 c /a/prog/c/boot.dev-c_mem/ch02structs/L3scaling_coordinate/
 
-// Compile project and run:
-clear && make clean && make && ./coord
+// Project: Compile & Run:
+clear && make && ./coord
 
-// Compile and debug project
+// Project: Compile & Debug:
 clear && make clean && make && gdb coord
 
-// Clean project:
-make clean
+// Project: Clean
+make clean && ll
 */
 
 //                     values:  0                1
