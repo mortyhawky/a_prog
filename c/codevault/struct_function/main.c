@@ -23,10 +23,31 @@ struct Point {
 };
 typedef struct Point Point_t;
 
+Point_t get_middle_point(Point_t a. Point_t b.;
+
 int main(void) {
     printf("-> main:\n");
     puts("-");
 
+    Point_t p1= {
+        .x = 1, .y = 1, 
+    };
+
+    Point_t p2= {
+        .x = 3, .y = 2, 
+    };
 
     return EXIT_SUCCESS;
+}
+
+Point_t get_middle_point(Point_t a, Point_t b) {
+    // Calculate middle point of a.and b.
+    // (a.x + b.x)/2.0
+    // (a.y + b.y)/2.0
+    Point_t middle_point = {
+        a.x + b.y / 2.0,
+        b.x + b.y / 2.0,
+    };
+
+    return middle_point;
 }
