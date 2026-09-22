@@ -23,43 +23,128 @@ struct Point {
 };
 typedef struct Point Point_t;
 
-Point_t get_middle_point(const Point_t a, const Point_t b);
+Point_t 
+get_mid_by_val(
+    const Point_t v_in1,
+    const Point_t v_in2);
+
+void    
+get_mid_by_ptr(
+    const Point_t* p_in1,
+    const Point_t* p_in2,
+    Point_t*       p_out);
+
+static void
+print_address16(const char *name, 
+                const void *address);
+void
+print_point_val(const char *name, 
+                const Point_t p);
+
+void
+print_point_ptr(const char *name,
+                const Point_t *p);
 
 int main(void) {
     printf("-> main:\n");
     puts("-");
 
-    const Point_t p1 = {
-        .x = 1,  .y = 1, 
-    };
+    Point_t in1 = {0};
+    print_address16("&in1", &in1);
+    print_address16("&in1.x", &in1.x);
+    print_address16("&in1.y", &in1.y);
+    puts("");
 
-    const Point_t p2 = {
-        .x = 3,  .y = 2, 
-    };
+    Point_t in2 = {0};
+    print_address16("&in2", &in2);
+    print_address16("&in2.x", &in2.x);
+    print_address16("&in2.y", &in2.y);
+    puts("");
 
-    Point_t middle_point = get_middle_point(p1, p2);
-    printf("middle_point = %0.3lf, %0.3lf \n", middle_point.x, middle_point.y );
+    Point_t out = {0};
+    print_address16("&out", &out);
+    print_address16("&out.x", &out.x);
+    print_address16("&out.y", &out.y);
+    puts("");
 
-    const Point_t* ptr_p1 = &p1;
-    printf("ptr_p1 = %p \n", ptr_p1);
-    puts("-");
+    print_point_val("in1", in1);
+    print_point_val("in2", in2);
+    puts("");
 
+    in1.x = 7.77; in1.y = 9.99;
+    in2.x = 11.11; in2.y = 13.13;
+    print_point_val("in1", in1);
+    print_point_val("in2", in2);
 
+    out = get_mid_by_val(in1, in2);
+    print_point_val("out", out);
+
+    get_mid_by_ptr(&in1, &in2, &out);
+    print_point_ptr("out", &out);
+
+    puts("");
     return EXIT_SUCCESS;
 }
 
-Point_t get_middle_point(const Point_t a, const Point_t b) {
-    // Calculate middle point of a.and b.
-    // (a.x + b.x)/2.0
-    // (a.y + b.y)/2.0
-    //Point_t middle_point = {
-    //    (a.x + b.x) / 2.0,
-    //    (a.y + b.y) / 2.0,
-    //};
-    
-    const Point_t mp;
-    mp.x = (a.x + b.x) / 2.0;
-    mp.y = (a.y + b.y) / 2.0;
 
-    return mp;
+// Functions
+Point_t 
+get_mid_by_val(const Point_t v_in1,
+               const Point_t v_in2){
+    printf("Calculate middle by value\n");
+    Point_t v_out;          // output point as value
+    v_out.x = (v_in1.x + v_in2.x) / 2.0;
+    v_out.y = (v_in1.y + v_in2.y) / 2.0;
+
+    return v_out;
+}
+
+void 
+get_mid_by_ptr(const Point_t* p_in1, 
+               const Point_t* p_in2,
+                     Point_t* p_out){
+    printf("Calculate middle by pointer\n");
+    p_out->x = (p_in1->x + p_in2->x);
+    p_out->y = (p_in1->y + p_in2->y);
+
+    return;                 // return void, go back to main
+}
+
+// static means the function is private to the current source file. 
+// Other .c files cannot call it by name.
+static void
+print_address16( const char *name, 
+                 const void *address){
+    uintptr_t value = (uintptr_t)address & (uintptr_t)0xFFFF;
+    printf("print_address16: %s = 0x%04" PRIxPTR "\n",
+                             name, 
+                                   value
+    );
+
+    return;
+}
+
+void
+print_point_val(const char *name, 
+                const Point_t p){
+    printf("print_by_value..: %s: %lf, %lf \n", 
+                              name, 
+                                  p.x, 
+                                        p.y
+    ); 
+
+    return;
+}
+
+
+void
+print_point_ptr(const char *name,
+                const Point_t *p){
+    printf("print_by_pointer: %s: %lf, %lf \n", 
+                              name, 
+                                  p->x, 
+                                        p->y
+    ); 
+
+    return;
 }
