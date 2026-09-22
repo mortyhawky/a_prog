@@ -1,7 +1,10 @@
 #vim : set filetype=conf :
 b main
+b get_middle_point
 r
 info breakpoints
+display p1
+display p2
 n
 
 #b coor_new
