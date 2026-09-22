@@ -8,7 +8,7 @@ clear && make && ./typedef
 clear && make clean && make && gdb --command gdb.file typedef
 
  * Project; Clean & Git
-make clean && gitall ; ll
+make clean && gitall || ll
 */
 
 #include <stdlib.h>
