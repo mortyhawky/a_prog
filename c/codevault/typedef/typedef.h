@@ -1,11 +1,8 @@
 #pragma once
 
-typedef struct Coordinate {
-    int x;
-    int y;
-    int z;
-} coordinate_t;
+struct Point {
+    double x, y;
+};
+typedef struct Point Point_t;
 
-coordinate_t new_coord(int x, int y, int z);
-coordinate_t scale_coordinate(coordinate_t coord, int factor);
-void show_coord(coordinate_t c);
+void point_display(Point_t point);
