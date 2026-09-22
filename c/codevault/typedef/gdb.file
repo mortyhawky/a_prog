@@ -2,7 +2,6 @@
 b main
 r
 info breakpoints
-#display c1
 n
 
 #b coor_new
@@ -17,6 +16,6 @@ n
 #n
 #n
 #
-##display l
-##display str
-##display/8xb str
+#display l
+#display str
+#display/8xb str
