@@ -23,15 +23,14 @@ clean:
 # Important: the indentation before $(CC) and rm must be a tab, 
 # not spaces. Make requires that for recipe lines.
 #
-# -- =====================================
-#  -- AUTO COMMANDS
-#  -- =====================================
+#-- Disable expandtab for Makefile
+#vim.api.nvim_create_autocmd("FileType", {
+#    desc = "Disable expandtab for Makefile",
+#    pattern = "make",	--set ft?    filetype=make
+#    callback = function()
+#        vim.opt_local.expandtab = false
+#        vim.opt_local.list      = true
+#        --vim.cmd("colorscheme default")
+#    end,
+#})
 #
-#  -- Disable expandtab for Makefiles
-#  vim.api.nvim_create_autocmd("FileType", {
-#      desc = "Disable expandtab for Makefiles",
-#      pattern = "make",   --set ft?    filetype=make
-#      callback = function()
-#          vim.opt_local.expandtab = false
-#      end,
-#  })

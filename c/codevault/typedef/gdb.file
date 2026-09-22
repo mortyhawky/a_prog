@@ -1,0 +1,22 @@
+#vim : set filetype=conf :
+b main
+r
+info breakpoints
+#display c1
+n
+
+#b coor_new
+#b coor_scale
+#b coor_show
+#r
+#display c1
+#
+##display len
+##display s_fgets
+#display/8db &color
+#n
+#n
+#
+##display l
+##display str
+##display/8xb str
