@@ -25,6 +25,11 @@ cppcheck:
 		--suppress=missingIncludeSystem \
 		main.c stru_func.c
 
+check:
+	$(CLEAN)
+	$(MAKE)
+	$(MAKE) cppcheck
+	./stru_func
 
 #
 # Important: the indentation before $(CC) and rm must be a tab, 

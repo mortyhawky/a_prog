@@ -2,10 +2,12 @@
 c /a/prog/c/codevault/260922struct_function_ptr/
 
  * Project; Compile & Run:
-clear && make clean && make && make cppcheck && ./stru_func
+clear && make clean && make && make cppcheck && ./stru_func && printf "Exit code = $? \n"
 
  * Project; Compile & Debug:
 clear && make clean && make && make cppcheck && gdb --command gdb.file stru_func
+
+ * Project; Check:
 
  * Project; Clean & Git
 (make clean && gitall) || (ll)
