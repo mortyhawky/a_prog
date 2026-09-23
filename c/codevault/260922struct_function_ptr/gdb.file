@@ -4,13 +4,16 @@ set pagination off
 set print pretty on
 
 define hook-stop
-    info locals
+    #info locals
+    print &in1
+    print &in2
+    print &out
 end
 
 break main
 break print_point_val
+break print_address_16
 
-#display in1
 #display in2
 #display out
 
