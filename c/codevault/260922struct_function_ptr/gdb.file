@@ -1,9 +1,19 @@
 #vim : set filetype=conf :
-b main
-r
+
+set pagination off
+set print pretty on
+
+break main
+break print_point_val
+run
 info breakpoints
 display in1
-n
+display in2
+display out
+
+
+#display locals
+#n
 
 #b coor_new
 #b coor_scale

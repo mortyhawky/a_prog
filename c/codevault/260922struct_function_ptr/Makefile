@@ -1,10 +1,20 @@
 CC = gcc
-CFLAGS = -std=c23 -Wall -Wextra -Werror -Wpedantic\
-		 -g3 -O0\
+CFLAGS = -std=c23 -Wall -Wextra -Werror -Wpedantic \
+		 -g3 -O0 \
 		 -fsanitize=address,undefined
 
 TARGET = stru_func
 OBJ = main.o stru_func.o
+
+.PHONY: all clean cppcheck check run dbg
+.PHONY:     cl             c     r   d
+##  m       build
+##  m cl    clean
+##  m c     clean, rebuild, run Cppcheck
+##  m r     clean, rebuild, run the program
+##  m d     build and start GDB
+
+all: $(TARGET)
 
 $(TARGET): $(OBJ)
 	$(CC) $(CFLAGS) -o $@ $^
@@ -15,6 +25,8 @@ main.o: main.c stru_func.h
 stru_func.o: stru_func.c stru_func.h
 	$(CC) $(CFLAGS) -c $<
 
+# Alias m cl
+cl: clean
 clean:
 	rm -f $(OBJ) $(TARGET)
 
@@ -25,11 +37,22 @@ cppcheck:
 		--suppress=missingIncludeSystem \
 		main.c stru_func.c
 
-check:
-	$(CLEAN)
+# Alias m c
+c: check
+check: clean
+	#clear
+	#eza -l
 	$(MAKE)
 	$(MAKE) cppcheck
-	./stru_func
+
+r: run
+run: clean
+	$(MAKE) all
+	./$(TARGET)
+
+d: dbg
+dbg: all
+	gdb -q -x gdb.file ./$(TARGET)
 
 #
 # Important: the indentation before $(CC) and rm must be a tab, 
