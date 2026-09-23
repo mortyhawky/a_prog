@@ -1,5 +1,5 @@
 /* cd into working directory
-c /a/prog/c/codevault/260922struct_function_ptr/
+c /a/prog/c/codevault/260922struct_function_ptr/ && gitall
 
  * Project; Compile & Run:
 clear && make clean && make && make cppcheck && ./stru_func && printf "Exit code = $? \n"
