@@ -18,6 +18,13 @@ stru_func.o: stru_func.c stru_func.h
 clean:
 	rm -f $(OBJ) $(TARGET)
 
+cppcheck:
+	cppcheck --std=c23 \
+		--enable=warning,style,performance,portability \
+		--error-exitcode=1 \
+		--suppress=missingIncludeSystem \
+		main.c stru_func.c
+
 
 #
 # Important: the indentation before $(CC) and rm must be a tab, 

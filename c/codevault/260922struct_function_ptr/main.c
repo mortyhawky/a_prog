@@ -2,10 +2,10 @@
 c /a/prog/c/codevault/260922struct_function_ptr/
 
  * Project; Compile & Run:
-clear && make && ./stru_func
+clear && make clean && make && make cppcheck && ./stru_func
 
  * Project; Compile & Debug:
-clear && make clean && make && gdb --command gdb.file stru_func
+clear && make clean && make && make cppcheck && gdb --command gdb.file stru_func
 
  * Project; Clean & Git
 (make clean && gitall) || (ll)
@@ -23,12 +23,12 @@ struct Point {
 };
 typedef struct Point Point_t;
 
-Point_t 
+static Point_t 
 get_mid_by_val(
     const Point_t v_in1,
     const Point_t v_in2);
 
-void    
+static void    
 get_mid_by_ptr(
     const Point_t* p_in1,
     const Point_t* p_in2,
@@ -37,11 +37,11 @@ get_mid_by_ptr(
 static void
 print_address16(const char *name, 
                 const void *address);
-void
+static void
 print_point_val(const char *name, 
                 const Point_t p);
 
-void
+static void
 print_point_ptr(const char *name,
                 const Point_t *p);
 
@@ -88,7 +88,7 @@ int main(void) {
 
 
 // Functions
-Point_t 
+static Point_t 
 get_mid_by_val(const Point_t v_in1,
                const Point_t v_in2){
     printf("Calculate middle by value\n");
@@ -99,13 +99,13 @@ get_mid_by_val(const Point_t v_in1,
     return v_out;
 }
 
-void 
+static void 
 get_mid_by_ptr(const Point_t* p_in1, 
                const Point_t* p_in2,
                      Point_t* p_out){
     printf("Calculate middle by pointer\n");
-    p_out->x = (p_in1->x + p_in2->x);
-    p_out->y = (p_in1->y + p_in2->y);
+    p_out->x = (p_in1->x + p_in2->x) / 2.0;
+    p_out->y = (p_in1->y + p_in2->y) / 2.0;
 
     return;                 // return void, go back to main
 }
@@ -124,7 +124,7 @@ print_address16( const char *name,
     return;
 }
 
-void
+static void
 print_point_val(const char *name, 
                 const Point_t p){
     printf("print_by_value..: %s: %lf, %lf \n", 
@@ -137,7 +137,7 @@ print_point_val(const char *name,
 }
 
 
-void
+static void
 print_point_ptr(const char *name,
                 const Point_t *p){
     printf("print_by_pointer: %s: %lf, %lf \n", 
