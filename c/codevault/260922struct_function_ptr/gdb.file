@@ -1,17 +1,22 @@
-#vim : set filetype=conf :
+# vim: set filetype=gdb :
 
 set pagination off
 set print pretty on
 
+define hook-stop
+    info locals
+end
+
 break main
 break print_point_val
+
+#display in1
+#display in2
+#display out
+
 run
-info breakpoints
-display in1
-display in2
-display out
 
-
+#info breakpoints
 #display locals
 #n
 

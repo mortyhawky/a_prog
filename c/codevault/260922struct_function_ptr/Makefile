@@ -29,6 +29,7 @@ stru_func.o: stru_func.c stru_func.h
 cl: clean
 clean:
 	rm -f $(OBJ) $(TARGET)
+	eza -l
 
 cppcheck:
 	cppcheck --std=c23 \
