@@ -1,10 +1,10 @@
-CC = gcc
+C = gcc
 CFLAGS = -std=c23 -Wall -Wextra -Werror -Wpedantic \
 		 -g3 -O0 \
 		 -fsanitize=address,undefined
 
-TARGET = stru_func
-OBJ = main.o stru_func.o
+TARGET = nogood
+OBJ = main.o nogood.o
 
 .PHONY: all clean cppcheck check run dbg
 .PHONY:     cl             c     r   d
@@ -19,10 +19,10 @@ all: $(TARGET)
 $(TARGET): $(OBJ)
 	$(CC) $(CFLAGS) -o $@ $^
 
-main.o: main.c stru_func.h
+main.o: main.c nogood.h
 	$(CC) $(CFLAGS) -c $<
 
-stru_func.o: stru_func.c stru_func.h
+nogood.o: nogood.c nogood.h
 	$(CC) $(CFLAGS) -c $<
 
 # Alias m cl
@@ -36,7 +36,7 @@ cppcheck:
 		--enable=warning,style,performance,portability \
 		--error-exitcode=1 \
 		--suppress=missingIncludeSystem \
-		main.c stru_func.c
+		main.c nogood.c
 
 # Alias m c
 c: check
@@ -49,7 +49,8 @@ check: clean
 r: run
 run: clean
 	$(MAKE) all
-	./$(TARGET)
+	./$(TARGET) 
+	$(printf "Exit code = $? \n")
 
 d: dbg
 dbg: all

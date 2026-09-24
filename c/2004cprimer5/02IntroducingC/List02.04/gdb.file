@@ -10,10 +10,11 @@ info breakpoints
 run
 
 display n1
+display &n1
 display n2
 display n3
 
-display val
+#display val
 
 
 #display locals
