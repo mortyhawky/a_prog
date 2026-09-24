@@ -4,39 +4,20 @@ set pagination off
 set print pretty on
 
 break main
-break nogood
+break print_val
 info breakpoints
 
 run
 
+display n1
+display n2
+display n3
 
 
-
-
-#display in2
-#display out
-
-
-#info breakpoints
 #display locals
-#n
 
-#b coor_new
-#b coor_scale
-#b coor_show
-#r
-#display c1
-#
-##display len
-##display s_fgets
 #display/8db &color
-#n
-#n
-#
-#display l
-#display str
 #display/8xb str
-
 
 #define hook-stop
 #    #info locals

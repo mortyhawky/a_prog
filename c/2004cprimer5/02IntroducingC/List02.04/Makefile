@@ -49,7 +49,8 @@ check: clean
 r: run
 run: clean
 	$(MAKE) all
-	./$(TARGET)
+	./$(TARGET) 
+	$(printf "Exit code = $? \n")
 
 d: dbg
 dbg: all
