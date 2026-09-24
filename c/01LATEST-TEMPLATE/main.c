@@ -1,5 +1,5 @@
 /* cd into working directory
-c /a/prog/c/2004cprimer5/02IntroducingC/List02.04/
+c /a/prog/c/2004cprimer5/02IntroducingC/List02.05/
 gitall ; ll
 
 m                       build
@@ -14,28 +14,31 @@ m d                     build and start GDB
 //#include <stdint.h>
 //#include <stdio.h>
 //#include <stdlib.h>
-//#include "nogood.h"
+//#include "stillbad.h"
 
-/*  nogood -- a program with errors */
+/*  stillbad -- a program with semantic error. */
 #include <stdio.h>
 #include <stdlib.h>
-#include "nogood.h"
+#include "stillbad.h"
 
 int main(void) {
     printf("->main: \n");
 
-    int n1, n2, n3;
-    n1 = n2 = n3 = 13;
-    printf("n1 = %d,   n2 = %d,   n3 = %d,   \n ", n1, n2, n3);
-    printf("&n1 = (int*)%p \n", (void*)&n1);
+    int n1, n2, n3, n4;
+    n1 = n2 = n3 = n4= 5;
+    print_int("n1", n1);
+    print_int("n2", n2);
+    print_int("n3", n3);
+    print_int("n4", n4);
 
-    print_val("n1",   n1  );    // expression produces 13; n1 remains 13
-    print_val("++n2", ++n2);    // n2 becomes 14; expression produces 14
-    print_val("--n3", --n3);    // n3 becomes 12; expression produces 12
-    
-    print_val("n1++", n1++);    // expression produces 13; n1 becomes 14
-    print_val("n1",   n1  );    // expression produces 14; n1 remains 14
+    int sq = square(n2);
+    print_int("square", sq);
 
+    int cu = cube(n3);
+    print_int("cube", cu);
+
+    int ts = time_space(n4);
+    print_int("time_spaced", ts);
 
     return EXIT_SUCCESS;
 }

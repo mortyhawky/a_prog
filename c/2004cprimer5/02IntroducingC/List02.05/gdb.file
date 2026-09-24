@@ -5,6 +5,9 @@ set print pretty on
 
 break main
 break print_int
+break square
+break cube
+break time_space
 info breakpoints
 
 run
