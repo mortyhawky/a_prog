@@ -1,0 +1,30 @@
+# vim: set filetype=gdb :
+
+set pagination off
+set print pretty on
+
+break main
+break print_int
+info breakpoints
+
+run
+
+display n1
+display &n1
+display n2
+display n3
+
+#display val
+
+
+#display locals
+
+#display/8db &color
+#display/8xb str
+
+#define hook-stop
+#    #info locals
+#    print &in1
+#    print &in2
+#    print &out
+#end
