@@ -1,5 +1,6 @@
 /*
- *
+c /a/prog/c/2004cprimer5/02IntroducingC/review_questions/
+
  */
 #include <stdio.h>
 int main(void) { // this prints the number of weeks in a year
