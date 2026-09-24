@@ -1,11 +1,12 @@
-#### bookmark.md
+# C Primer Plus 5th. Edition
 
-```nvim
-:r !date -Iseconds
-2026-09-23T14:45:04+02:00
+```nvim command :
+r !date -Iseconds
+2026-09-24T14:37:57+02:00
 ```
 
-```bash
-page 20 in book
-page 30 in pdf
+```bookmark
+page 38 in book
+page 46 in pdf
+diff 46 - 38 = 08 pages
 ```
