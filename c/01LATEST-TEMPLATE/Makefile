@@ -6,8 +6,8 @@ CFLAGS = -std=c23 -Wall -Wextra -Werror -Wpedantic \
 TARGET = stillbad
 OBJ = main.o stillbad.o
 
-.PHONY: all clean cppcheck check run dbg
-.PHONY:     cl             c     r   d
+.PHONY: all clean cppcheck check run dbg test
+.PHONY:     cl             c     r   d   t
 ##  m       build
 ##  m cl    clean
 ##  m c     clean, rebuild, run Cppcheck
@@ -49,12 +49,14 @@ check: clean
 r: run
 run: clean
 	$(MAKE) all
-	./$(TARGET)
-	&& printf "Exit code = $? \n"
+	./$(TARGET); printf "Exit code = %d\n" $$?
 
 d: dbg
 dbg: all
 	gdb -q -x gdb.file ./$(TARGET)
+
+test:
+	false; rc=$$?; printf "Exit code = %d\n" "$$rc"
 
 #
 # Important: the indentation before $(CC) and rm must be a tab, 
