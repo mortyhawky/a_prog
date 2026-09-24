@@ -1,5 +1,7 @@
 /* cd into working directory
-c /a/prog/c/codevault/260922struct_function_ptr/ && gitall
+c /a/prog/c/\
+2004cprimer5/02IntroducingC/List02.04\
+    && gitall
 
 m                       build
 m cl                    clean
