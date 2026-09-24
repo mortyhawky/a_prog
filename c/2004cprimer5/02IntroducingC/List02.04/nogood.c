@@ -1,4 +1,9 @@
 #include <stdio.h>
-#include "stru_func.h"
+#include "noogood.h"
 
+void print_val(int val) {
+    printf("int val = %d \n", val);
+
+    return;
+}
 

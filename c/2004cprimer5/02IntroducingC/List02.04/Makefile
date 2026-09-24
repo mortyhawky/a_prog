@@ -3,8 +3,8 @@ CFLAGS = -std=c23 -Wall -Wextra -Werror -Wpedantic \
 		 -g3 -O0 \
 		 -fsanitize=address,undefined
 
-TARGET = noogood
-OBJ = main.o noogood.o
+TARGET = nogood
+OBJ = main.o nogood.o
 
 .PHONY: all clean cppcheck check run dbg
 .PHONY:     cl             c     r   d
@@ -19,10 +19,10 @@ all: $(TARGET)
 $(TARGET): $(OBJ)
 	$(CC) $(CFLAGS) -o $@ $^
 
-main.o: main.c noogood.h
+main.o: main.c nogood.h
 	$(CC) $(CFLAGS) -c $<
 
-noogood.o: noogood.c noogood.h
+nogood.o: nogood.c nogood.h
 	$(CC) $(CFLAGS) -c $<
 
 # Alias m cl
@@ -36,7 +36,7 @@ cppcheck:
 		--enable=warning,style,performance,portability \
 		--error-exitcode=1 \
 		--suppress=missingIncludeSystem \
-		main.c noogood.c
+		main.c nogood.c
 
 # Alias m c
 c: check

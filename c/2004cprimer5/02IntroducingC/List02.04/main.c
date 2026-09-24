@@ -14,7 +14,7 @@ m d                     build and start GDB
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "noogood.h"
+#include "nogood.h"
 
 int main(void) {
     printf("->main: \n");
