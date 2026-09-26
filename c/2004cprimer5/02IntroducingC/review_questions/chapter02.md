@@ -101,7 +101,6 @@ int main(void) { // this prints the number of weeks in a year
 ```
 
 ```Q5:
-```
 Assuming that each of the following examples is part of a complete
 program, what will each one print?
 a.
@@ -129,28 +128,27 @@ No/nBonzo?
 2 + 2 = 4
 ```
 
+```Q6:
+Which of the following are C keywords?
+main, int function, char, =
+```
+```A6:
+*main* is not a C keyword. In a hosted C program, main is the
+designated program entry point.
 
+In the C language *int* and *char* is keywords.
 
+*function* is not a keyword in C. Thus, it can be used as an 
+identifier, or a label.
 
+*=* is the assignment operator.
+```
 
-
-
---------------------------------------------------------------
-a. Baa Baa Black Sheep.Have you any wool?
-(Note that there is no space after the period. You could have had a space
-by using " Have instead of "Have.)
-b.
-c.
-d. Begone!
-e. O creature of lard!
-f. (Note that the cursor is left at the end of the second line.)
-g.
-h.
-i. What?
-j. No/nBonzo?
-k. (Note that the slash [/] does not have the same effect as the backslash
-[\]; it simply prints as a slash.)
-l. 2 + 2 = 4
-(Note how each %d is replaced by the corresponding variable value from
-the list. Note, too, that + means addition and that calculation can be done
-inside a printf() statement.)
+```Q7:
+How would you print the values of words and lines in the form 
+"There were 3020 words and 350 lines.? Here, 3020 and 350 represent
+values for the two variables.
+```
+```A7:
+printf("There were %d words and %d lines.\n", words, lines);
+```
