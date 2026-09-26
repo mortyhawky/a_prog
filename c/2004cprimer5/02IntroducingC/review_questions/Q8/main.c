@@ -1,5 +1,5 @@
 /* cd into working directory
-c /a/prog/c/2004cprimer5/02IntroducingC/review_questions/q5/
+c /a/prog/c/2004cprimer5/02IntroducingC/review_questions/q8/
 gitall ; ll
 
 m                       build
@@ -14,11 +14,11 @@ m d                     build and start GDB
 //#include <stdint.h>
 //#include <stdio.h>
 //#include <stdlib.h>
-//#include "q5.h"
+//#include "q8.h"
 
 #include <stdio.h>
 #include <stdlib.h>
-//#include "q5.h"
+//#include "q8.h"
 
 int main(void) {
     puts("");

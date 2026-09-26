@@ -3,8 +3,8 @@ CFLAGS = -std=c23 -Wall -Wextra -Werror -Wpedantic \
 		 -g3 -O0 \
 		 -fsanitize=address,undefined
 
-TARGET = q5
-OBJ = main.o q5.o
+TARGET = q8
+OBJ = main.o q8.o
 
 .PHONY: all clean cppcheck check run dbg
 .PHONY:     cl             c     r   d
@@ -19,10 +19,10 @@ all: $(TARGET)
 $(TARGET): $(OBJ)
 	$(CC) $(CFLAGS) -o $@ $^
 
-main.o: main.c q5.h
+main.o: main.c q8.h
 	$(CC) $(CFLAGS) -c $<
 
-q5.o: q5.c q5.h
+q8.o: q8.c q8.h
 	$(CC) $(CFLAGS) -c $<
 
 # Alias m cl
@@ -36,7 +36,7 @@ cppcheck:
 		--enable=warning,style,performance,portability \
 		--error-exitcode=1 \
 		--suppress=missingIncludeSystem \
-		main.c q5.c
+		main.c q8.c
 
 # Alias m c
 c: check

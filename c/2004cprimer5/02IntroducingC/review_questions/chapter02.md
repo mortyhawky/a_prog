@@ -152,3 +152,28 @@ values for the two variables.
 ```A7:
 printf("There were %d words and %d lines.\n", words, lines);
 ```
+
+```Q8:
+Consider the following program:
+
+#include <stdio.h>
+int main(void)
+{
+    int a, b;
+    a = 5;
+    b = 2;      /* line 7 */
+    b = a;      /* line 8 */
+    a = b;      /* line 9 */
+    printf("%d %d\n", b, a);
+    return 0;
+}
+
+What is the program state after line 7? Line 8? Line 9?
+```A8:
+after line    a         b
+7             a = 5     b = 2 
+8             a = 5     b = 5
+9             a = 5     b = 5
+
+10          It will print: '5 5'
+```
