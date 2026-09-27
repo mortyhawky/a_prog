@@ -1,5 +1,5 @@
 /* cd into working directory
-c /a/prog/c/2004cprimer5/02IntroducingC/programming_exercises/01/
+c /a/prog/c/2004cprimer5/02IntroducingC/programming_exercises/02/
 
 m                       build
 m cl                    clean
@@ -22,10 +22,11 @@ m d                     build and start GDB
 int main(void) {
     puts("\nmain:\n");
 
-    printf("Morty Hawky \n");   // <- First print statement
-    printf("Morty \nHawky \n"); // <- Second print statement
-    printf("Morty ");           // <- Third print statement 
-    printf("Hawky \n");         // <- Fourth print statement
+    printf("Morty Hawky         \n");
+    printf("Deichmansgate 103B  \n");
+    printf("3924 Porsgrunn      \n");
+    printf("Norway              \n");
+
 
     puts("\n");
     return EXIT_SUCCESS;
