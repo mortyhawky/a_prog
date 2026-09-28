@@ -1,5 +1,5 @@
 /* cd into working directory
-c /a/prog/c/2004cprimer5/02IntroducingC/programming_exercises/05/
+c /a/prog/c/2004cprimer5/02IntroducingC/programming_exercises/06/
 
 m                       build
 m cl                    clean
@@ -14,21 +14,16 @@ m d                     build and start GDB
 //#include <stdio.h>
 //#include <stdlib.h>
 
-#include "ex05.h"
+#include "ex06.h"
 #include <stdio.h>
 #include <stdlib.h>
 
 int main(void) {
     puts("\nmain:\n");
 
-    unsigned short int toes = 10;
-    printf("toes         = %hu \n", toes);
-
-    unsigned short int toes_twice = toes * 2;
-    printf("toes_twice   = %hu \n", toes_twice);
-
-    unsigned short int toes_squared = toes * toes;
-    printf("toes_squared = %hu \n", toes_squared);
+    smile();smile();smile();puts("");
+    smile();smile();puts("");
+    smile();puts("");
 
     puts("");
     return EXIT_SUCCESS;
