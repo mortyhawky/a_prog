@@ -13,20 +13,16 @@ m d                     build and start GDB
 //#include <stdint.h>
 //#include <stdio.h>
 //#include <stdlib.h>
-//#include "ex01.h"
 
-//#include "ex01.h"
+//#include "ex03.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 
 int main(void) {
     puts("\nmain:\n");
 
-    printf("Morty Hawky         \n");
-    printf("Deichmansgate 103B  \n");
-    printf("3924 Porsgrunn      \n");
-    printf("Norway              \n");
-
+    // Insert your code here
 
     puts("\n");
     return EXIT_SUCCESS;
