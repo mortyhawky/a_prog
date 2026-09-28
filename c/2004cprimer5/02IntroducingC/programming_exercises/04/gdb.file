@@ -1,17 +1,18 @@
 # vim: set filetype=gdb :
-
 set pagination off
 set print pretty on
 
 break main
-#break print_int
-#break square
-#break cube
-#break time_space
+break jolly_good
+break final
 info breakpoints
 
 run
 next
+
+
+
+
 
 #display n1
 #display &n1
