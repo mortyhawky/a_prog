@@ -4,18 +4,19 @@ set pagination off
 set print pretty on
 
 break main
-break print_int
-break square
-break cube
-break time_space
+#break print_int
+#break square
+#break cube
+#break time_space
 info breakpoints
 
 run
+next
 
-display n1
-display &n1
-display n2
-display n3
+#display n1
+#display &n1
+#display n2
+#display n3
 
 #display val
 

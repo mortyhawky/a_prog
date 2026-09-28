@@ -1,6 +1,5 @@
 /* cd into working directory
-c /a/prog/c/2004cprimer5/02IntroducingC/List02.05/
-gitall ; ll
+c /a/prog/c/2004cprimer5/02IntroducingC/programming_exercises/02/
 
 m                       build
 m cl                    clean
@@ -14,31 +13,21 @@ m d                     build and start GDB
 //#include <stdint.h>
 //#include <stdio.h>
 //#include <stdlib.h>
-//#include "stillbad.h"
+//#include "ex01.h"
 
-/*  stillbad -- a program with semantic error. */
+//#include "ex01.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include "stillbad.h"
 
 int main(void) {
-    printf("->main: \n");
+    puts("\nmain:\n");
 
-    int n1, n2, n3, n4;
-    n1 = n2 = n3 = n4= 5;
-    print_int("n1", n1);
-    print_int("n2", n2);
-    print_int("n3", n3);
-    print_int("n4", n4);
+    printf("Morty Hawky         \n");
+    printf("Deichmansgate 103B  \n");
+    printf("3924 Porsgrunn      \n");
+    printf("Norway              \n");
 
-    int sq = square(n2);
-    print_int("square", sq);
 
-    int cu = cube(n3);
-    print_int("cube", cu);
-
-    int ts = time_space(n4);
-    print_int("time_spaced", ts);
-
+    puts("\n");
     return EXIT_SUCCESS;
 }

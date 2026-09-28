@@ -3,8 +3,8 @@ CFLAGS = -std=c23 -Wall -Wextra -Werror -Wpedantic \
 		 -g3 -O0 \
 		 -fsanitize=address,undefined
 
-TARGET = stillbad
-OBJ = main.o stillbad.o
+TARGET = ex02
+OBJ = main.o ex02.o
 
 .PHONY: all clean cppcheck check run dbg
 .PHONY:     cl             c     r   d
@@ -19,10 +19,10 @@ all: $(TARGET)
 $(TARGET): $(OBJ)
 	$(CC) $(CFLAGS) -o $@ $^
 
-main.o: main.c stillbad.h
+main.o: main.c ex02.h
 	$(CC) $(CFLAGS) -c $<
 
-stillbad.o: stillbad.c stillbad.h
+ex02.o: ex02.c ex02.h
 	$(CC) $(CFLAGS) -c $<
 
 # Alias m cl
@@ -36,7 +36,7 @@ cppcheck:
 		--enable=warning,style,performance,portability \
 		--error-exitcode=1 \
 		--suppress=missingIncludeSystem \
-		main.c stillbad.c
+		main.c ex02.c
 
 # Alias m c
 c: check
@@ -49,8 +49,8 @@ check: clean
 r: run
 run: clean
 	$(MAKE) all
-	./$(TARGET); printf "Exit code = %d\n" $$?
-	#./$(TARGET); rc=$$?; printf "Exit code = %d\n" "$$rc"
+	#./$(TARGET); printf "Exit code = %d\n" $$?
+	./$(TARGET); rc=$$?; printf "Exit code = %d\n" "$$rc"
 
 d: dbg
 dbg: all
